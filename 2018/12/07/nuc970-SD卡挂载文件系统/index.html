@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="nuc970,SD卡挂载文件系统,内核配置,Uboot参数配置,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="nuc970 SD卡挂载文件系统 写在前面： 公司需要把自己研究的算法移植到nuc970芯片上进行实现，我们自己制作的板子中只有SPI Flash 大小为16M，一般情况下我配置出的Linux内核为6M，考虑到后期如果需要在板子中存储数据，显然16M是不够用的。板子上配备了SD卡接口，因此考虑将文件系统存储在SD卡中，uboot挂载文件系统的时候从SD卡挂载。这样板子就能偶拥有一个较为大的存储空间">
+<meta name="keywords" content="nuc970,SD卡挂载文件系统,内核配置,Uboot参数配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nuc970 SD卡挂载文件系统">
+<meta property="og:url" content="http://blog.cookiedemo.ml/2018/12/07/nuc970-SD卡挂载文件系统/index.html">
+<meta property="og:site_name" content="CookieDemo的学习记录">
+<meta property="og:description" content="nuc970 SD卡挂载文件系统 写在前面： 公司需要把自己研究的算法移植到nuc970芯片上进行实现，我们自己制作的板子中只有SPI Flash 大小为16M，一般情况下我配置出的Linux内核为6M，考虑到后期如果需要在板子中存储数据，显然16M是不够用的。板子上配备了SD卡接口，因此考虑将文件系统存储在SD卡中，uboot挂载文件系统的时候从SD卡挂载。这样板子就能偶拥有一个较为大的存储空间">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://s1.ax1x.com/2018/12/07/F3eb1f.md.png">
+<meta property="og:updated_time" content="2019-03-14T07:35:10.614Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nuc970 SD卡挂载文件系统">
+<meta name="twitter:description" content="nuc970 SD卡挂载文件系统 写在前面： 公司需要把自己研究的算法移植到nuc970芯片上进行实现，我们自己制作的板子中只有SPI Flash 大小为16M，一般情况下我配置出的Linux内核为6M，考虑到后期如果需要在板子中存储数据，显然16M是不够用的。板子上配备了SD卡接口，因此考虑将文件系统存储在SD卡中，uboot挂载文件系统的时候从SD卡挂载。这样板子就能偶拥有一个较为大的存储空间">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/12/07/F3eb1f.md.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.cookiedemo.ml/2018/12/07/nuc970-SD卡挂载文件系统/">
+
+
+
+
+
+  <title>nuc970 SD卡挂载文件系统 | CookieDemo的学习记录</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CookieDemo的学习记录</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">程序元萌新</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2018/12/07/nuc970-SD卡挂载文件系统/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">nuc970 SD卡挂载文件系统</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-07T10:59:51+08:00">
+                2018-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/嵌入式/" itemprop="url" rel="index">
+                    <span itemprop="name">嵌入式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="nuc970-SD卡挂载文件系统"><a href="#nuc970-SD卡挂载文件系统" class="headerlink" title="nuc970 SD卡挂载文件系统"></a>nuc970 SD卡挂载文件系统</h1><blockquote>
+<p>写在前面： 公司需要把自己研究的算法移植到nuc970芯片上进行实现，我们自己制作的板子中只有SPI Flash 大小为16M，一般情况下我配置出的Linux内核为6M，考虑到后期如果需要在板子中存储数据，显然16M是不够用的。板子上配备了SD卡接口，因此考虑将文件系统存储在SD卡中，uboot挂载文件系统的时候从SD卡挂载。这样板子就能偶拥有一个较为大的存储空间。</p>
+</blockquote>
+<h2 id="SD卡格式化操作"><a href="#SD卡格式化操作" class="headerlink" title="SD卡格式化操作"></a>SD卡格式化操作</h2><p>需要工具如下：</p>
+<ul>
+<li>读卡器一个</li>
+<li>SD卡一张</li>
+<li>linux PC机（可以虚拟机代替）</li>
+</ul>
+<p><strong>明确目的:我们需要将SD卡重新分为两个分区</strong> </p>
+<ul>
+<li><strong>一个Vfat分区,</strong></li>
+<li><strong>一个Ext3分区.</strong><br>结果如下:</li>
+</ul>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">NAME        FSTYPE LABEL    UUID                                 FSAVAIL FSUSE% MOUNTPOINT</span><br><span class="line">sda                                                 </span><br><span class="line">├─sda1      ntfs   本地磁盘 ACD0DE98D0DE67DA                    </span><br><span class="line">├─sda2      ntfs   本地磁盘 <span class="number">02</span>CAD14FCAD14019               </span><br><span class="line">├─sda3      vfat            <span class="number">1174</span><span class="number">-33</span>D6                             <span class="number">456.5</span>M    <span class="number">11</span>% /boot</span><br><span class="line">└─sda4      ext4            <span class="number">652</span>fd18c<span class="number">-3881</span><span class="number">-4517</span>-aeaa<span class="number">-9</span>cf3307af788  <span class="number">236.4</span>G    <span class="number">24</span>% /</span><br><span class="line">sdb                                                              </span><br><span class="line">├─sdb1      vfat            <span class="number">633</span>B<span class="number">-0E65</span>                            </span><br><span class="line">└─sdb2      ext3            <span class="number">735</span>da43e-f63d<span class="number">-4945</span>-b330<span class="number">-2</span>aad120604c</span><br></pre></td></tr></table></figure>
+<p>我们首先将SD放入读卡器，接入linux系统。接入系统之后，我们最好先查看一下我们的SD卡的设备节点标识。 这里我么可以使用lsblk命令来查看我们电脑中的磁盘状况。<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># lsblk -f</span><br><span class="line">NAME        FSTYPE LABEL    UUID                                 FSAVAIL FSUSE% MOUNTPOINT</span><br><span class="line">sda                                                                 </span><br><span class="line">├─sda1      ntfs   本地磁盘 ACD0DE98D0DE67DA                        </span><br><span class="line">├─sda2      ntfs   本地磁盘 <span class="number">02</span>CAD14FCAD14019                       </span><br><span class="line">├─sda3      vfat            <span class="number">1174</span><span class="number">-33</span>D6                             <span class="number">456.5</span>M    <span class="number">11</span>% /boot</span><br><span class="line">└─sda4      ext4            <span class="number">652</span>fd18c<span class="number">-3881</span><span class="number">-4517</span>-aeaa<span class="number">-9</span>cf3307af788  <span class="number">236.4</span>G    <span class="number">24</span>% /</span><br><span class="line">sdb         vfat            A237<span class="number">-25</span>A3                              <span class="number">14.9</span>G     <span class="number">0</span>% /run/media/coo</span><br><span class="line">nvme0n1                                                            </span><br><span class="line">├─nvme0n1p1 vfat   SYSTEM   C27F-C43D                           </span><br><span class="line">├─nvme0n1p2                                             </span><br><span class="line">├─nvme0n1p3 ntfs            <span class="number">287464E27464</span>B46A                   </span><br><span class="line">├─nvme0n1p4 ntfs            ACF6D003F6CFCC30                  </span><br><span class="line">└─nvme0n1p5 ntfs   Recovery <span class="number">66</span>BC8255BC821FA3</span><br></pre></td></tr></table></figure></p>
+<p>这里我们可以看到三个磁盘 sda， sdb， nvme0n1.一般情况下sda是我们电脑中的机械硬盘，sdb则是我们需要操作的SD卡（如果你的显示不一样，可以从容量上简单判断下），nvme0n1是我们电脑中的固态硬盘。sdax(即sda1,sda2,sda3,)是我们的我们的硬盘分区,这里可以看到我的电脑中机械硬盘的分区有4个,其中sda1,sda2是nfts文件系统格式的分区,这里使用来存放windows系统文件的(我的电脑中是双系统linuxa和windows),sda3是vfat格式的文件系统,vfats是操作系统引导是需要去找的一个分区(这里如果自己详细安装过操作系统的人应该明白).同理下面nvme0n1是一样的.</p>
+<p>接下来我们使用fdisk工具来格式化我们的SD卡.具体操作如下<br>终端下输入命令:<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># sudo fdisk /dev/sdb</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Tips:这个工具在我用的时候我们呢也不是很熟悉,但是如何让我们快速学会使用这个工具呢?当然最好的方法就是查看这个工具的帮助文档.</p>
+</blockquote>
+<p>然后你会看到如下输出,注意这里有个一(m for help)意思就是你输入m就可以获得帮助信息.所以我们输出m.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">Welcome to fdisk (util-linux 2.33).</span><br><span class="line">Changes will remain in memory only, until you decide to write them.</span><br><span class="line">Be careful before using the write command.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Command (m for <span class="keyword">help</span>): m</span><br><span class="line"></span><br><span class="line"><span class="keyword">Help</span>:</span><br><span class="line"></span><br><span class="line">  DOS (MBR)</span><br><span class="line">   a   toggle a bootable flag</span><br><span class="line">   b   edit <span class="keyword">nested</span> BSD disklabel</span><br><span class="line">   c   toggle the dos <span class="keyword">compatibility</span> flag</span><br><span class="line"></span><br><span class="line">  Generic</span><br><span class="line">   d   <span class="keyword">delete</span> a <span class="keyword">partition</span></span><br><span class="line">   F   <span class="keyword">list</span> free unpartitioned <span class="keyword">space</span></span><br><span class="line">   l   <span class="keyword">list</span> known <span class="keyword">partition</span> types</span><br><span class="line">   n   <span class="keyword">add</span> a <span class="keyword">new</span> <span class="keyword">partition</span></span><br><span class="line">   p   print the <span class="keyword">partition</span> <span class="keyword">table</span></span><br><span class="line">   t   <span class="keyword">change</span> a <span class="keyword">partition</span> <span class="keyword">type</span></span><br><span class="line">   v   <span class="keyword">verify</span> the <span class="keyword">partition</span> <span class="keyword">table</span></span><br><span class="line">   i   print information about a <span class="keyword">partition</span></span><br><span class="line"></span><br><span class="line">  Misc</span><br><span class="line">   m   print this menu</span><br><span class="line">   u   <span class="keyword">change</span> display/entry units</span><br><span class="line">   x   extra functionality (experts <span class="keyword">only</span>)</span><br><span class="line"></span><br><span class="line">  Script</span><br><span class="line">   I   <span class="keyword">load</span> disk layout <span class="keyword">from</span> sfdisk script <span class="keyword">file</span></span><br><span class="line">   O   dump disk layout <span class="keyword">to</span> sfdisk script <span class="keyword">file</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">Save</span> &amp; <span class="keyword">Exit</span></span><br><span class="line">   w   write <span class="keyword">table</span> <span class="keyword">to</span> disk <span class="keyword">and</span> <span class="keyword">exit</span></span><br><span class="line">   q   quit <span class="keyword">without</span> saving changes</span><br><span class="line"></span><br><span class="line">  <span class="keyword">Create</span> a <span class="keyword">new</span> label</span><br><span class="line">   g   <span class="keyword">create</span> a <span class="keyword">new</span> <span class="keyword">empty</span> GPT <span class="keyword">partition</span> <span class="keyword">table</span></span><br><span class="line">   G   <span class="keyword">create</span> a <span class="keyword">new</span> <span class="keyword">empty</span> SGI (IRIX) <span class="keyword">partition</span> <span class="keyword">table</span></span><br><span class="line">   o   <span class="keyword">create</span> a <span class="keyword">new</span> <span class="keyword">empty</span> DOS <span class="keyword">partition</span> <span class="keyword">table</span></span><br><span class="line">   s   <span class="keyword">create</span> a <span class="keyword">new</span> <span class="keyword">empty</span> Sun <span class="keyword">partition</span> <span class="keyword">table</span></span><br><span class="line"></span><br><span class="line">Command (m <span class="keyword">for</span> <span class="keyword">help</span>):</span><br></pre></td></tr></table></figure></p>
+<p>这里我们需要的命令也就 <strong>d, n, p, w</strong> 三个命令,具体的自己看一下解释吧(ps:英文要有一定基础哦).<br>如果的你SD卡有其他分区,请使用 <strong>d</strong> 命令删除所有分区,命令使用后会按照分区数字大小从大往小一次删除.我的SD卡中有两个分区,故结果如下.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Command (m for <span class="keyword">help</span>): p         <span class="comment">#输入p来查看当前分区</span></span><br><span class="line">Disk /dev/sdb: <span class="number">14.9</span> GiB, <span class="number">16005464064</span> <span class="keyword">bytes</span>, <span class="number">31260672</span> sectors</span><br><span class="line">Disk <span class="keyword">model</span>: <span class="keyword">Storage</span> Device  </span><br><span class="line">Units: sectors <span class="keyword">of</span> <span class="number">1</span> * <span class="number">512</span> = <span class="number">512</span> <span class="keyword">bytes</span></span><br><span class="line">Sector <span class="keyword">size</span> (<span class="keyword">logical</span>/<span class="keyword">physical</span>): <span class="number">512</span> <span class="keyword">bytes</span> / <span class="number">512</span> <span class="keyword">bytes</span></span><br><span class="line">I/O <span class="keyword">size</span> (<span class="keyword">minimum</span>/<span class="keyword">optimal</span>): <span class="number">512</span> <span class="keyword">bytes</span> / <span class="number">512</span> <span class="keyword">bytes</span></span><br><span class="line">Disklabel <span class="keyword">type</span>: dos</span><br><span class="line">Disk identifier: <span class="number">0x107530c7</span></span><br><span class="line"></span><br><span class="line">Device     Boot  <span class="keyword">Start</span>      <span class="keyword">End</span>  Sectors  <span class="keyword">Size</span> <span class="keyword">Id</span> <span class="keyword">Type</span></span><br><span class="line">/dev/sdb1         <span class="number">2048</span>   <span class="number">206848</span>   <span class="number">204801</span>  <span class="number">100</span>M <span class="number">83</span> Linux</span><br><span class="line">/dev/sdb2       <span class="number">208896</span> <span class="number">31260671</span> <span class="number">31051776</span> <span class="number">14.8</span>G <span class="number">83</span> Linux</span><br><span class="line"></span><br><span class="line">Command (m <span class="keyword">for</span> <span class="keyword">help</span>): d     <span class="comment">#输入d 删除一个分区</span></span><br><span class="line"><span class="keyword">Partition</span> <span class="built_in">number</span> (<span class="number">1</span>,<span class="number">2</span>, <span class="keyword">default</span> <span class="number">2</span>):   <span class="comment">#默认回车</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Partition</span> <span class="number">2</span> has been deleted.</span><br><span class="line"></span><br><span class="line">Command (m <span class="keyword">for</span> <span class="keyword">help</span>): d     <span class="comment">#输入d 删除一个分区 </span></span><br><span class="line">Selected <span class="keyword">partition</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">Partition</span> <span class="number">1</span> has been deleted.</span><br></pre></td></tr></table></figure></p>
+<p>接下来就来新建分区了<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">Command (m for <span class="keyword">help</span>): p         <span class="comment">#查看当前磁盘分区</span></span><br><span class="line">Disk /dev/sdc: <span class="number">14.9</span> GiB, <span class="number">16005464064</span> <span class="keyword">bytes</span>, <span class="number">31260672</span> sectors</span><br><span class="line">Disk <span class="keyword">model</span>: <span class="keyword">Storage</span> Device  </span><br><span class="line">Units: sectors <span class="keyword">of</span> <span class="number">1</span> * <span class="number">512</span> = <span class="number">512</span> <span class="keyword">bytes</span></span><br><span class="line">Sector <span class="keyword">size</span> (<span class="keyword">logical</span>/<span class="keyword">physical</span>): <span class="number">512</span> <span class="keyword">bytes</span> / <span class="number">512</span> <span class="keyword">bytes</span></span><br><span class="line">I/O <span class="keyword">size</span> (<span class="keyword">minimum</span>/<span class="keyword">optimal</span>): <span class="number">512</span> <span class="keyword">bytes</span> / <span class="number">512</span> <span class="keyword">bytes</span></span><br><span class="line">Disklabel <span class="keyword">type</span>: dos</span><br><span class="line">Disk identifier: <span class="number">0x107530c7</span></span><br><span class="line"></span><br><span class="line">Command (m <span class="keyword">for</span> <span class="keyword">help</span>): n         <span class="comment">#新建第一个磁盘分区</span></span><br><span class="line"><span class="keyword">Partition</span> <span class="keyword">type</span></span><br><span class="line">   p   primary (<span class="number">0</span> primary, <span class="number">0</span> <span class="keyword">extended</span>, <span class="number">4</span> free)</span><br><span class="line">   e   <span class="keyword">extended</span> (<span class="keyword">container</span> <span class="keyword">for</span> <span class="keyword">logical</span> <span class="keyword">partitions</span>)</span><br><span class="line"><span class="keyword">Select</span> (<span class="keyword">default</span> p): p           <span class="comment">#新建主分区</span></span><br><span class="line"><span class="keyword">Partition</span> <span class="built_in">number</span> (<span class="number">1</span><span class="number">-4</span>, <span class="keyword">default</span> <span class="number">1</span>): <span class="number">1</span>        <span class="comment">#分区号为1</span></span><br><span class="line"><span class="keyword">First</span> sector (<span class="number">2048</span><span class="number">-31260671</span>, <span class="keyword">default</span> <span class="number">2048</span>):     <span class="comment">#默认回车,起始地址</span></span><br><span class="line"><span class="keyword">Last</span> sector, +/-sectors <span class="keyword">or</span> +/-<span class="keyword">size</span>&#123;K,M,G,T,P&#125; (<span class="number">2048</span><span class="number">-31260671</span>, <span class="keyword">default</span> <span class="number">31260671</span>): <span class="number">206848</span> </span><br><span class="line"><span class="comment">#  收入结束地址, 这里206848 是100M的分区大小</span></span><br><span class="line">Created a <span class="keyword">new</span> <span class="keyword">partition</span> <span class="number">1</span> <span class="keyword">of</span> <span class="keyword">type</span> <span class="string">'Linux'</span> <span class="keyword">and</span> <span class="keyword">of</span> <span class="keyword">size</span> <span class="number">100</span> MiB.</span><br><span class="line"></span><br><span class="line">Command (m <span class="keyword">for</span> <span class="keyword">help</span>): n         <span class="comment">#新建第二个磁盘分区</span></span><br><span class="line"><span class="keyword">Partition</span> <span class="keyword">type</span></span><br><span class="line">   p   primary (<span class="number">1</span> primary, <span class="number">0</span> <span class="keyword">extended</span>, <span class="number">3</span> free)</span><br><span class="line">   e   <span class="keyword">extended</span> (<span class="keyword">container</span> <span class="keyword">for</span> <span class="keyword">logical</span> <span class="keyword">partitions</span>)</span><br><span class="line"><span class="keyword">Select</span> (<span class="keyword">default</span> p): p           <span class="comment">#新建主分区</span></span><br><span class="line"><span class="keyword">Partition</span> <span class="built_in">number</span> (<span class="number">2</span><span class="number">-4</span>, <span class="keyword">default</span> <span class="number">2</span>): <span class="comment">#默认回车,分区号为2</span></span><br><span class="line"><span class="keyword">First</span> sector (<span class="number">206849</span><span class="number">-31260671</span>, <span class="keyword">default</span> <span class="number">208896</span>):     <span class="comment">#默认回车,自动接上一个分区的结束地址</span></span><br><span class="line"><span class="keyword">Last</span> sector, +/-sectors <span class="keyword">or</span> +/-<span class="keyword">size</span>&#123;K,M,G,T,P&#125; (<span class="number">208896</span><span class="number">-31260671</span>, <span class="keyword">default</span> <span class="number">31260671</span>):      </span><br><span class="line"><span class="comment">#默认回车,会使用SD卡剩下的所有存储空间</span></span><br><span class="line"></span><br><span class="line">Created a <span class="keyword">new</span> <span class="keyword">partition</span> <span class="number">2</span> <span class="keyword">of</span> <span class="keyword">type</span> <span class="string">'Linux'</span> <span class="keyword">and</span> <span class="keyword">of</span> <span class="keyword">size</span> <span class="number">14.8</span> GiB.</span><br></pre></td></tr></table></figure></p>
+<p>这里我们就完成了分区的划分,但是实际上还没有结束,我们需要使用 <strong>w</strong> 命令来将我们的分区写入到SD卡中.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Command (m for <span class="keyword">help</span>): w         <span class="comment">#输入 w 写入分区</span></span><br><span class="line">The <span class="keyword">partition</span> <span class="keyword">table</span> has been altered.</span><br><span class="line"><span class="keyword">Calling</span> ioctl() <span class="keyword">to</span> re-<span class="keyword">read</span> <span class="keyword">partition</span> table.</span><br><span class="line">Syncing disks.</span><br></pre></td></tr></table></figure></p>
+<p>最后我们在使用 lsblk命令检查一下我们的结果:<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lsblk -f /dev/sdb                                                  :(</span></span><br><span class="line">NAME   FSTYPE <span class="keyword">LABEL</span><span class="bash"> UUID FSAVAIL FSUSE% MOUNTPOINT</span></span><br><span class="line">sdc                                     </span><br><span class="line">├─sdb1                                  </span><br><span class="line">└─sdb2</span><br></pre></td></tr></table></figure></p>
+<p>这个时候我们就可以看到,我们的分区已经做好了,但是和上面还没有文件系统呢.接下来们就需要给没一个分区写入文件系统.这里我们使用mkfs.vfat 和 mkfs.ext3 命令来操作,依次输入命令<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># sudo mkfs.vfat /dev/sdb1</span></span><br><span class="line"><span class="meta"># sudo mkfs.ext3 /dev/sdb2</span></span><br></pre></td></tr></table></figure></p>
+<p>我们再次查看一下SD卡的分区及其文件系统格式,lsblk -f /dev/sdb<br><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># lsblk -f /dev/sdb                                                  :(</span><br><span class="line">NAME   FSTYPE LABEL UUID                                 FSAVAIL FSUSE% MOUNTPOINT</span><br><span class="line">sdc                                                                </span><br><span class="line">├─sdb1 vfat         56F9<span class="string">-5</span>D5B                                       </span><br><span class="line">└─sdb2 ext3         cd4e91d5<span class="string">-717</span>d<span class="string">-439</span>e-b06c<span class="string">-7118</span>cf213ef3</span><br></pre></td></tr></table></figure></p>
+<p>到这里我们的SD卡的内容就算制作完毕了<br>这个时候我们需要将我们制作好的文件系统写入我们的SD卡中<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># mount /dev/sdb2 /mnt</span></span><br><span class="line"><span class="meta"># cp -ra your_rootfs_path/* /mnt</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="修改linux内核配置"><a href="#修改linux内核配置" class="headerlink" title="修改linux内核配置"></a>修改linux内核配置</h2><blockquote>
+<p>之前自己第一次写这个博文的时候,发觉记录的时候出现差错.少记录的配置选项.</p>
+</blockquote>
+<p>这个部分我们需要配置linux内核,使其能够支持ext3系统,这里值给出需要配置的linux内核选项，其余的选项，你可以根据自己的内容进行修改（这里我默认你已经会使用Linux内核编译工作了）<br>配置内核支持Ext3文件系统.</p>
+<div align="center"><br><img src="https://s1.ax1x.com/2018/12/07/F3eb1f.md.png"><br><p>图1.Ext3文件系统支持-linux内核配置</p></div>
+
+<p>配置内核支持SD卡系统:</p>
+<p><div align="center"><br><img src><br></div><br>配置完成之后,我们将修改的linux内核下载到nuc970板子的spi-flash中.</p>
+<h2 id="修改uboot启动参数"><a href="#修改uboot启动参数" class="headerlink" title="修改uboot启动参数"></a>修改uboot启动参数</h2><p>最后一步了,为了能够让uboot从SD卡挂载文件系统,我们需要修改uboot的启动参数,板子上电之后,我们进入uboot命令行界面,然后输入如下命令:<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> bootargs <span class="comment">"noinitrd root=179:2 rw rootdelay=3 rootfstype=ext3 console=ttyS0"</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Tips: 这里解释一下,root=179:2 这个参数指定了root的位置是在SD卡(我不知道为啥),这里要设置rootdelay=3,防止内核还没有读取到SD卡就开始加载ext3文件系统,导致启动失败,这里最好指明我们的文件系统格式</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nuc970/" rel="tag"># nuc970</a>
+          
+            <a href="/tags/SD卡挂载文件系统/" rel="tag"># SD卡挂载文件系统</a>
+          
+            <a href="/tags/内核配置/" rel="tag"># 内核配置</a>
+          
+            <a href="/tags/Uboot参数配置/" rel="tag"># Uboot参数配置</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/29/regularization-term/" rel="next" title="正则化-解决学习中的过拟合和欠拟合问题">
+                <i class="fa fa-chevron-left"></i> 正则化-解决学习中的过拟合和欠拟合问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/14/buildroot-嵌入式构建方案-工具链-文件系统-内核-busybox编译工作/" rel="prev" title="buildroot-嵌入式构建方案-工具链-文件系统-内核-busybox编译工作">
+                buildroot-嵌入式构建方案-工具链-文件系统-内核-busybox编译工作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">CookieDemo</p>
+              <p class="site-description motion-element" itemprop="description">机器学习 | 嵌入式 | 理工男</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nuc970-SD卡挂载文件系统"><span class="nav-number">1.</span> <span class="nav-text">nuc970 SD卡挂载文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SD卡格式化操作"><span class="nav-number">1.1.</span> <span class="nav-text">SD卡格式化操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改linux内核配置"><span class="nav-number">1.2.</span> <span class="nav-text">修改linux内核配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改uboot启动参数"><span class="nav-number">1.3.</span> <span class="nav-text">修改uboot启动参数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CookieDemo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

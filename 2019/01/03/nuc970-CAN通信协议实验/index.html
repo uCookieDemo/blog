@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="nuc977,CAN,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="nuc970-CAN通信协议实验CAN协议简介CAN是控制器局域网络(Controller Area Network, CAN)的简称，是由以研发和生产汽车电子产品著称的德国BOSCH公司开发的，并最终成为国际标准（ISO 11898），是国际上应用最广泛的现场总线之一。CAN总线协议已经成为汽车计算机控制系统和嵌入式工业控制局域网的标准总线,并且拥有以CAN为底层协议的专为大型货车和重工业机械车">
+<meta name="keywords" content="nuc977,CAN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nuc970-CAN通信协议实验">
+<meta property="og:url" content="http://blog.cookiedemo.ml/2019/01/03/nuc970-CAN通信协议实验/index.html">
+<meta property="og:site_name" content="CookieDemo的学习记录">
+<meta property="og:description" content="nuc970-CAN通信协议实验CAN协议简介CAN是控制器局域网络(Controller Area Network, CAN)的简称，是由以研发和生产汽车电子产品著称的德国BOSCH公司开发的，并最终成为国际标准（ISO 11898），是国际上应用最广泛的现场总线之一。CAN总线协议已经成为汽车计算机控制系统和嵌入式工业控制局域网的标准总线,并且拥有以CAN为底层协议的专为大型货车和重工业机械车">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/007vJL53ly1fytifwq4j1j30hi083weo.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/large/007vJL53ly1fytibdeddtj30sb08gq8o.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/007vJL53ly1fytp2kr451j30wm0jtmyp.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/large/007vJL53ly1fz7f9i4xazj30q80p90xc.jpg">
+<meta property="og:updated_time" content="2019-03-14T07:35:10.611Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nuc970-CAN通信协议实验">
+<meta name="twitter:description" content="nuc970-CAN通信协议实验CAN协议简介CAN是控制器局域网络(Controller Area Network, CAN)的简称，是由以研发和生产汽车电子产品著称的德国BOSCH公司开发的，并最终成为国际标准（ISO 11898），是国际上应用最广泛的现场总线之一。CAN总线协议已经成为汽车计算机控制系统和嵌入式工业控制局域网的标准总线,并且拥有以CAN为底层协议的专为大型货车和重工业机械车">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/007vJL53ly1fytifwq4j1j30hi083weo.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.cookiedemo.ml/2019/01/03/nuc970-CAN通信协议实验/">
+
+
+
+
+
+  <title>nuc970-CAN通信协议实验 | CookieDemo的学习记录</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CookieDemo的学习记录</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">程序元萌新</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2019/01/03/nuc970-CAN通信协议实验/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">nuc970-CAN通信协议实验</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T12:33:40+08:00">
+                2019-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/嵌入式/" itemprop="url" rel="index">
+                    <span itemprop="name">嵌入式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="nuc970-CAN通信协议实验"><a href="#nuc970-CAN通信协议实验" class="headerlink" title="nuc970-CAN通信协议实验"></a>nuc970-CAN通信协议实验</h1><h2 id="CAN协议简介"><a href="#CAN协议简介" class="headerlink" title="CAN协议简介"></a>CAN协议简介</h2><p>CAN是控制器局域网络(Controller Area Network, CAN)的简称，是由以研发和生产汽车电子产品著称的德国BOSCH公司开发的，并最终成为国际标准（ISO 11898），是国际上应用最广泛的现场总线之一。<br>CAN总线协议已经成为汽车计算机控制系统和嵌入式工业控制局域网的标准总线,并且拥有以CAN为底层协议的专为大型货车和重工业机械车梁设计的J1939协议.近年来,它具有高可靠性和良好的错误检测能力受到重视,被广泛的用于汽车计算机控制系统和环境温度恶劣,电磁辐射强及震动大的工业环境.</p>
+<h2 id="CAN协议的物理层"><a href="#CAN协议的物理层" class="headerlink" title="CAN协议的物理层"></a>CAN协议的物理层</h2><p>与I2C,SPI等具有始终信号同步通讯方式不同,CAN通讯并不是以时钟信号来进行同步的,它是一种异步通信方式,它只有CAN_High和CAN_Low两条信号线.共同构成一组差分信号线,以差分信号的形式进行通讯.<br>CAN物理层的形式主要分为闭环总线及开环总线网络两种.一种适合于高速通信,一种适合于远距离通信.<br>在使用CAN控制器之前,我们需要正确的配置硬件,在ISO-11898中规定,CAN总线在闭环总线40米内的最高传输速率为1Mbps.为了防止终端信号反射,终端必须搭配合适的阻抗,一般为120欧姆的电阻.(在NUC970中片上未包含CAN收发器,用户需自行选配)</p>
+<div align="center"><br>&lt;img src=”<a href="http://wx3.sinaimg.cn/large/007vJL53ly1fytba1n0tsj30c306jt8z.jpg&quot;\http://wx3.sinaimg.cn/large/007vJL53ly1fytba1n0tsj30c306jt8z.jpg&gt;" target="_blank" rel="noopener">http://wx3.sinaimg.cn/large/007vJL53ly1fytba1n0tsj30c306jt8z.jpg&quot;\http://wx3.sinaimg.cn/large/007vJL53ly1fytba1n0tsj30c306jt8z.jpg&gt;</a><br><p>图1 CAN闭环总线连接</p><br></div>
+
+<blockquote>
+<p>回环模式: 在nuc970芯片的内部,我们可以通过配置CPU使得片上的CAN控制器RX和TX短接,这样就形成了一个本地回环可以帮助我们测试CAN功能.</p>
+</blockquote>
+<p>CAN协议中对使用的CAN_High和CAN_Lowb表示的差分信号做了规定.<br>以高速的CAN协议为例,当表示逻辑1时(隐性电平),CAN_High和CAN_Lowx线上的电压均为2.5V,即他们的压差$V_H-V_L=0$V;而表示逻辑0时,CAN_High的电平为3.5V,CAN_Low的电平为1.5V,即他们的压差$V_H-V_L=2$V.其电平逻辑图如下图所示</p>
+<div align="center"><br><img src="https://ws2.sinaimg.cn/large/007vJL53ly1fytifwq4j1j30hi083weo.jpg"><br><p>图2 差分信号示意图</p><br></div><br>在ISO-11898中规定并给出的推荐电平信号如下:<br><div align="center"><br><img src="http://wx4.sinaimg.cn/large/007vJL53ly1fytibdeddtj30sb08gq8o.jpg"><br><p>图2 差分信号示意图</p><br></div>
+
+<h2 id="CAN协议层"><a href="#CAN协议层" class="headerlink" title="CAN协议层"></a>CAN协议层</h2><p>CAN协议层规定了通信逻辑</p>
+<h3 id="1-CAN的波特率及位同步"><a href="#1-CAN的波特率及位同步" class="headerlink" title="1.CAN的波特率及位同步"></a>1.CAN的波特率及位同步</h3><p>由于CAN属于异步通信,没有时钟信号线,;连接在同一个总线网络的各个节点会像串口通信那样按照约定好的波特率j进行通讯,CAN还会使用”位同步”的方式来抗干扰,吸收误差实现对总线信号的正确采样,确保通信正常.<br>发送单元在非同步的q情况下发送的每秒钟的位数称为位速率,数据传输中一个位可以分为4个段.</p>
+<ul>
+<li>同步段 (SS, Synchronization Segment)</li>
+<li>传播时间段 (PTS, Propagation Time Segment)</li>
+<li>相位缓冲段1 (PBS1, Phase Buffer Segment 1)</li>
+<li>相位缓冲段2 (PBS2, Phase Buffer Segment 2)</li>
+</ul>
+<p>这些段又可以由Time Quantum(通常称之为$T_q$,)的最小时间单位构成.<br>一个位分为4个段,每个段由若干个$T_q$构成.<br>一个位由多少个$T_q$构成,每个段又由多少个$T_q$构成,可以任意设定位时序.通过设定位时序,多个单元可以同时采样,也可以任意设定采样点.</p>
+<div align="center"><br>&lt;img src=”<a href="http://wx3.sinaimg.cn/large/007vJL53ly1fytl90fhu9j31hc0g43ze.jpg&quot;\&gt;" target="_blank" rel="noopener">http://wx3.sinaimg.cn/large/007vJL53ly1fytl90fhu9j31hc0g43ze.jpg&quot;\&gt;</a><br></div>
+
+<p>各段及其作用如下</p>
+<ul>
+<li>同步段: 多个连接在总线上的单元通过此段实现时序调整,同步进行j接收和发送工作,由隐性电平到显性电平的跳变沿或者由显性电平到隐性电平的跳变沿最好出现在此段中.</li>
+<li>传播时间段: 用于吸收网络上物理延时的段.所谓的网络延时是指发送单元的输出延迟,总线单元的传播延时和接收单元的输入延时. 这个段的时间为以上各个延时的两倍.</li>
+<li>相位缓冲段: 当信号边沿不能被包含在SS段时,可以在此段中进行补偿.由于各段以独立的时钟独自工作,细微的时钟误差会累积起来. PBS段可以吸收此误差.通过相位缓冲段加减 再同步补偿宽度段来吸收误差.再同步补偿宽度增加意味这允许误差增大,但是会下降通信速率.</li>
+</ul>
+<div align="center"><br><img src="https://ws4.sinaimg.cn/large/007vJL53ly1fytp2kr451j30wm0jtmyp.jpg"><br><p>图4.位同步示意图</p><br></div>
+
+
+<h2 id="在linux中关于CAN总线的配置工作"><a href="#在linux中关于CAN总线的配置工作" class="headerlink" title="在linux中关于CAN总线的配置工作"></a>在linux中关于CAN总线的配置工作</h2><p>部门实现的nuc977开发板中的CAN配置工作需要配置linux内核,CAN测试工具,以及文件系统构建.</p>
+<ul>
+<li>我们需要配置linux内核支持CAN驱动.</li>
+<li>为了兼容目前网上大多数开源系统的编译器,我们不采用新塘官方的编辑器.使用buildroot重新编译工具链,构建自己的文件系统.<blockquote>
+<p>经过测试我发现在3.10版本的内核中不支持最新的GCC编译器,官方采用GCC的版本为4.8,我在配置buildroot时gcc工具链配置的最低版本为4.9,测试通过可以编译完成内核.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="内核配置选项"><a href="#内核配置选项" class="headerlink" title="内核配置选项"></a>内核配置选项</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[*] Networking support  ---&gt; </span><br><span class="line">   &lt;*&gt;   CAN bus subsystem support  ---&gt; </span><br><span class="line">    &lt;*&gt;  <span class="built_in"> Raw </span>CAN Protocol (raw access with CAN-ID filtering)             </span><br><span class="line">        &lt;*&gt;   Broadcast Manager CAN Protocol (with content filtering)  </span><br><span class="line">        &lt;*&gt;   CAN Gateway/Router (with netlink configuration)          </span><br><span class="line">              CAN Device Drivers  ---&gt;   </span><br><span class="line">           &lt;*&gt; Virtual Local CAN<span class="built_in"> Interface </span>(vcan)                                    </span><br><span class="line">  │ │      &lt; &gt; Serial / USB serial CAN Adaptors (slcan)                   </span><br><span class="line">  │ │      &lt;*&gt; Platform CAN drivers with Netlink support                                │ │  </span><br><span class="line">  │ │      [*]   CAN bit-timing calculation                                             │ │  </span><br><span class="line">  │ │      [ ]   <span class="builtin-name">Enable</span> LED triggers <span class="keyword">for</span> Netlink based drivers                          │ │  </span><br><span class="line">  │ │      &lt; &gt;   Atmel AT91 onchip CAN controller                                       │ │  </span><br><span class="line">  │ │      &lt; &gt;   Philips/NXP SJA1000 devices  ---&gt;                                      │ │  </span><br><span class="line">  │ │      &lt; &gt;   Bosch C_CAN/D_CAN devices  ---&gt;                                        │ │  </span><br><span class="line">  │ │      &lt;*&gt;   NUC970 CAN0/CAN1 devices  ---&gt;                          </span><br><span class="line">                  [*]   NUC970 CAN0 support                                             │ │  </span><br><span class="line">  │ │             [*]     <span class="builtin-name">Enable</span> CAN0 wake-up function                                  │ │  </span><br><span class="line">  │ │                       NUC970 CAN0 pin selection (Tx:PH3, Rx:PH2)                  │ │  </span><br><span class="line">  │ │      [ ]   NUC970 CAN1 support             </span><br><span class="line">  │ │      &lt; &gt;   Bosch CC770 <span class="keyword">and</span> Intel AN82527 devices  ---&gt;             </span><br><span class="line">  │ │            CAN USB interfaces  ---&gt;                              </span><br><span class="line">  │ │      &lt; &gt;   Softing Gmbh CAN generic support                     </span><br><span class="line">  │ │      [ ] CAN devices debugging messages</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>之前有所疑惑,在新塘给出的linux内核中,将引脚正确配置对,就可以实现对应的功能,但是在国内百度云,还有一个淘宝给出的代码中,在NUC970系列芯片关于配置CAN在PI端口是均有错误.如果你看到这篇文档,请查阅自己的内核代码,是否有问题.具体可以查看在论坛中的讨论.<br><a href="https://debugdump.com/viewtopic.php?pid=14094#p14094" target="_blank" rel="noopener">https://debugdump.com/viewtopic.php?pid=14094#p14094</a></p>
+</blockquote>
+<h3 id="buildroot-配置工作"><a href="#buildroot-配置工作" class="headerlink" title="buildroot 配置工作"></a>buildroot 配置工作</h3><p>这一块的问题我在之前的一篇博文中已经写过了.这里需要指明的是,关于GCC工具链的版本,如果你不做配置,默认使用的是最新的GCC版本,新塘官方linux的内核配套的GCC工具连版本为4.8,测试后发现在4.9下也能正常编译(最新的buildroot最低配置为4.9).<br>配置工作如下:<br>简单说一下,这里的配置工作和内核配置方法十分相似:<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># make menuconfig</span></span><br></pre></td></tr></table></figure></p>
+<p>然后我们这里需要配置GCC的版本<br><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">T<span class="function"><span class="title">oolchain</span>  ---&gt;</span></span><br><span class="line">   GCC <span class="function"><span class="title">compiler</span> Version (gcc 4.9.x)  ---&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>编译之后在output/host路径下即是当前被编译出来的工具链,你可以打包到/usr/local下,然后正确配置环境变量即可使用该工具链.如果之前有新塘的工具链最好取消工具链中的链接文件(arm-linux-XXXXXX 的文件都是软链接文件). 在output/image/路径下有编译出来的根文件系统.</p>
+<h3 id="canutils-的编译工作"><a href="#canutils-的编译工作" class="headerlink" title="canutils 的编译工作"></a>canutils 的编译工作</h3><p>这里想参考一下mcuzone中的can工具编译脚本(PS:其实以后可以尝试把自己做过的工作尝试吧写一个脚本来做,在自己工作环境下适用就可以了)</p>
+<div><br><img src="http://wx1.sinaimg.cn/large/007vJL53ly1fz7f9i4xazj30q80p90xc.jpg"><br></div>
+
+<h3 id="linux下的测试工作"><a href="#linux下的测试工作" class="headerlink" title="linux下的测试工作"></a>linux下的测试工作</h3><p>接下来我们需要吧IP命令和can-utils中的命令放置在我们的文件系统中.(实际上这个工作在脚本中已经做了相应的工作). 然后就是测试CAN接口.<br>测试环境如下: 开发板供电,连接DB9直连线(常用串口线是交叉线,需要注意),与周立功的USBCAN-II设备相连.<br>在开发板上使用如下命令测试,使开发作为接收方接收CAN信息:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ip link <span class="built_in">set</span> can0 up <span class="built_in">type</span> can bitrate 1000000</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> candump can0 -t d</span></span><br></pre></td></tr></table></figure>
+<p>在电脑端设置配置USBCAN-II为1000K波特率进行测试.发送数据帧,观察开发板能否接收到数据.<br>其他常用命令如下:</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># ip -det -stat link show can0</span><br><span class="line"><span class="comment">// 查看can0接口的详细信息</span></span><br><span class="line"></span><br><span class="line"># sudo modprobe vcan   </span><br><span class="line"><span class="comment">//加载CAN虚拟模块</span></span><br><span class="line"></span><br><span class="line"># ip link set can0 up type can bitrate <span class="number">800000</span> loopback on</span><br><span class="line"><span class="comment">// 设置回环模式，自发自收，用于测试芯片硬件是否正常,loopback不一定支持</span></span><br><span class="line"></span><br><span class="line"># ip link set can0 down</span><br><span class="line"><span class="comment">// 关闭CAN0网络</span></span><br><span class="line"></span><br><span class="line"># cansend can0 <span class="number">0x11</span> <span class="number">0x22</span> <span class="number">0x33</span> <span class="number">0x44</span> <span class="number">0x55</span> <span class="number">0x66</span> <span class="number">0x77</span> <span class="number">0x88</span></span><br><span class="line"><span class="comment">//发送默认ID为0x1的can标准帧，数据为0x11 22 33 44 55 66 77 88 每次最大8个byte</span></span><br><span class="line"></span><br><span class="line"># cansend can0 -i <span class="number">0x800</span> <span class="number">0x11</span> <span class="number">0x22</span> <span class="number">0x33</span> <span class="number">0x44</span> <span class="number">0x55</span> <span class="number">0x66</span> <span class="number">0x77</span> <span class="number">0x88</span> -e</span><br><span class="line"><span class="comment">// -e 表示扩展帧，CAN_ID最大29bit，标准帧CAN_ID最大11bit  -i表示CAN_ID</span></span><br><span class="line"></span><br><span class="line"># cansend can0 -i <span class="number">0x02</span> <span class="number">0x11</span> <span class="number">0x12</span> --loop=<span class="number">20</span></span><br><span class="line"><span class="comment">// --loop 表示发送20个包</span></span><br><span class="line"></span><br><span class="line"># candump can0</span><br><span class="line"><span class="comment">// 接收CAN0数据</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nuc977/" rel="tag"># nuc977</a>
+          
+            <a href="/tags/CAN/" rel="tag"># CAN</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/18/linux命令使用记录/" rel="next" title="linux命令使用记录">
+                <i class="fa fa-chevron-left"></i> linux命令使用记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/21/nuc977-驱动程序开发之LED驱动/" rel="prev" title="nuc977 驱动程序开发之LED驱动">
+                nuc977 驱动程序开发之LED驱动 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">CookieDemo</p>
+              <p class="site-description motion-element" itemprop="description">机器学习 | 嵌入式 | 理工男</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nuc970-CAN通信协议实验"><span class="nav-number">1.</span> <span class="nav-text">nuc970-CAN通信协议实验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CAN协议简介"><span class="nav-number">1.1.</span> <span class="nav-text">CAN协议简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAN协议的物理层"><span class="nav-number">1.2.</span> <span class="nav-text">CAN协议的物理层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAN协议层"><span class="nav-number">1.3.</span> <span class="nav-text">CAN协议层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CAN的波特率及位同步"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.CAN的波特率及位同步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在linux中关于CAN总线的配置工作"><span class="nav-number">1.4.</span> <span class="nav-text">在linux中关于CAN总线的配置工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内核配置选项"><span class="nav-number">1.4.1.</span> <span class="nav-text">内核配置选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#buildroot-配置工作"><span class="nav-number">1.4.2.</span> <span class="nav-text">buildroot 配置工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#canutils-的编译工作"><span class="nav-number">1.4.3.</span> <span class="nav-text">canutils 的编译工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux下的测试工作"><span class="nav-number">1.4.4.</span> <span class="nav-text">linux下的测试工作</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CookieDemo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

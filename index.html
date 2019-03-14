@@ -1,0 +1,2552 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="机器学习 | 嵌入式 | 理工男">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CookieDemo的学习记录">
+<meta property="og:url" content="http://blog.cookiedemo.ml/index.html">
+<meta property="og:site_name" content="CookieDemo的学习记录">
+<meta property="og:description" content="机器学习 | 嵌入式 | 理工男">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CookieDemo的学习记录">
+<meta name="twitter:description" content="机器学习 | 嵌入式 | 理工男">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.cookiedemo.ml/">
+
+
+
+
+
+  <title>CookieDemo的学习记录</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CookieDemo的学习记录</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">程序元萌新</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2019/01/23/嵌入式之MTD分区表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/23/嵌入式之MTD分区表/" itemprop="url">嵌入式之MTD分区表-嵌入式系统在线升级</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-23T15:14:48+08:00">
+                2019-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/嵌入式/" itemprop="url" rel="index">
+                    <span itemprop="name">嵌入式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="嵌入式之MTD分区表"><a href="#嵌入式之MTD分区表" class="headerlink" title="嵌入式之MTD分区表"></a>嵌入式之MTD分区表</h1><h3 id="jffs2-FileSystem"><a href="#jffs2-FileSystem" class="headerlink" title="jffs2 FileSystem"></a>jffs2 FileSystem</h3><p>在linux中熟知的File System(FS),有Ext2,Ext3,Ext4,但是这些操作系统都是针对磁盘设备的,而在Embedded System(ES)中一般存储设备为Flash.由于Flash的特殊性:</p>
+<ul>
+<li>Flash的存储按照Block Size进行划分,而一个BLS一般有几十K(对比一个磁盘的一个簇才512字节).现在BLS较大带来的就是在操作FLASK内存一次需要花费很长时间.</li>
+<li>每一次Flash操作都需要对一个BLS进行整体操作.例如,如果想操作FLASH上一个字节的数据,则需要对FLASH上一个BLS整体操作去改动这个字节的数据.</li>
+<li>每个FLASH的BLS擦写次数是有限制的,例如2百万次? 如果如果每次都操作同一个BLS的话,这个一个BLS很快就不能用了.</li>
+<li>jffs2 FileSystem 针对于FLASH的特点提出的文件系统,并提供损耗均衡算法,也就是每一次的从擦写都不会停留这一个BLS上.使得每一个BLS的损耗都是均衡的.</li>
+</ul>
+<h3 id="MTD技术"><a href="#MTD技术" class="headerlink" title="MTD技术"></a>MTD技术</h3><p>Memory Techlnology Device(MTD),是一个软件抽象层，为了屏蔽不同种类和不同厂商的闪存，从而为上层的文件系统提供统一的接口.<br>一般嵌入式文件系统为YAFFS,JFFS2,UBIFS等,FLASH,MTD与文件系统之间的关系如下图所示:</p>
+<div align="center"><br><img src="http://wx1.sinaimg.cn/large/007vJL53ly1fzgldwf0arj30hn0j63zr.jpg"><br></div>
+
+<h3 id="nuc977开发板配置"><a href="#nuc977开发板配置" class="headerlink" title="nuc977开发板配置"></a>nuc977开发板配置</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2019/01/23/再次体验buildroot带来的便利-应用程序移植/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/23/再次体验buildroot带来的便利-应用程序移植/" itemprop="url">再次体验buildroot带来的便利-应用程序移植</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-23T12:12:22+08:00">
+                2019-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/嵌入式/" itemprop="url" rel="index">
+                    <span itemprop="name">嵌入式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="再次体验buildroot带来的便利-应用程序移植"><a href="#再次体验buildroot带来的便利-应用程序移植" class="headerlink" title="再次体验buildroot带来的便利-应用程序移植"></a>再次体验buildroot带来的便利-应用程序移植</h1><p>Buildroot是Linux平台上一个开源的嵌入式Linux系统自动构建框架。整个Buildroot是由Makefile脚本和Kconfig配置文件构成的。你可以和编译Linux内核一样，通过buildroot配置，menuconfig修改，编译出一个完整的可以直接烧写到机器上运行的Linux系统软件(包含boot、kernel、rootfs以及rootfs中的各种库和应用程序)。<br>这篇博文中笔者记录下,buildroot对于第三方软件包配置的过程.buildroot在嵌入式解决方案中确能够给我我们带来很大的便利,对于第三方软件包的编译移植工作,我们不在需要繁琐的下载源码,编译配置,配置(有时候还需要解决软件包的前向库依赖,循环到之前的库源码编译),安装到文件系统的工作.</p>
+<p>便利说完了, 接下来做具体工作.</p>
+<p><strong>工作前提</strong>: </p>
+<ul>
+<li>编译过一次buildroot</li>
+<li>正确配置了busybox的配置</li>
+<li>正确配置了内核(我这里是nuc977的板子)</li>
+</ul>
+<h3 id="目标任务"><a href="#目标任务" class="headerlink" title="目标任务"></a>目标任务</h3><ul>
+<li>nuc977开发板上编译通过can-utils</li>
+<li>nuc977开发板上编译通过iprouter2</li>
+<li>nuc977开发板上编译通过mtd-utils</li>
+<li>nuc977开发板上编译通过openssh</li>
+</ul>
+<p>在linux环境下,进入buildroot根目录下:执行 make menuconfig (和内核,uboot编译及其相似)<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># make menuconifg</span></span><br></pre></td></tr></table></figure></p>
+<p><div align="center"><br><img src="https://ws3.sinaimg.cn/large/007vJL53ly1fzgf1wex70j30q80k90ud.jpg" alt="image" width="944" data-width="944" data-height="729"><br></div><br>关于linux系统下的第三方软件包都在target package中.<br>我们需要配置的IP命令在iprouter包中,can-utils测试工具,iprouter2还有openssh都属于网络应用,因此需要配置的地方在 Networking Appllication 中:<br><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">T<span class="function"><span class="title">arget</span> packages  ---&gt;</span></span><br><span class="line">  N<span class="function"><span class="title">etworking</span> applications  ---&gt;</span> </span><br><span class="line">     [*] can-utils </span><br><span class="line">     [*] iproute2 </span><br><span class="line">     [*] openssh</span><br></pre></td></tr></table></figure></p>
+<p>我们需要配置的mtd-utils软件包是一个linux下的flash存储器的操作工具.配置在Filesystem and flash utilities中:<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Filesystem and flash utilities  ---&gt;</span><br><span class="line">    <span class="string">[*]</span> mtd, jffs2 and ubi/ubifs tools</span><br><span class="line">        *** MTD tools selection ***</span><br><span class="line">    <span class="string">[*]</span>   flashcp  </span><br><span class="line">    <span class="string">[*]</span>   flash_erase</span><br><span class="line">    <span class="string">[*]</span>   flash_lock</span><br><span class="line">    <span class="string">[*]</span>   flash_unlock</span><br><span class="line">    <span class="string">[*]</span>   nftldump </span><br><span class="line">    <span class="string">[*]</span>   mtdinfo</span><br></pre></td></tr></table></figure></p>
+<p>这样就配置完成了QAQ! 是不是很轻松,如果你只需要这个两个功能,这个时候你就可以执行<strong>make</strong>去编译了.编译完成后,iprouter和can-utils相关的可执行文件自动被安装在文件系统中的/usr/bin目录中去了.是不是很方便也不用写配置脚本指定–prefix,也不用写–host=arm-linux 等很长的配置命令.也不用去解决这些软件包之间繁琐的库依赖,版本不一致等问题了.<br> 突然觉得没啥写的了Q.Q,就写这么多吧,<br> 对了 openssh配置完成之后还需要相关的服务端配置,这个可以查询openssh配置.我配置的时候需要root登录.配置方式如下:<br> 登录开发板文件系统,修改/etc/ssh/sshd_config文件修改并取消如下三行注释<br> <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">PermitRootLogin</span> <span class="literal">yes</span></span><br><span class="line"><span class="string">PasswordAuthentication</span> <span class="literal">yes</span></span><br><span class="line"><span class="string">PermitEmptyPasswords</span> <span class="literal">no</span></span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2019/01/21/nuc977-驱动程序开发之LED驱动/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/21/nuc977-驱动程序开发之LED驱动/" itemprop="url">nuc977 驱动程序开发之LED驱动</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-21T11:22:45+08:00">
+                2019-01-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/嵌入式/" itemprop="url" rel="index">
+                    <span itemprop="name">嵌入式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="nuc977-驱动程序开发之LED驱动"><a href="#nuc977-驱动程序开发之LED驱动" class="headerlink" title="nuc977 驱动程序开发之LED驱动"></a>nuc977 驱动程序开发之LED驱动</h1><blockquote>
+<p>其实之前一直也是很想尝试linux的驱动开发的，现在工作当中，需要我去将我们自己产品的外设写成驱动程序，借此机会，顺便学习一下。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2019/01/03/nuc970-CAN通信协议实验/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/03/nuc970-CAN通信协议实验/" itemprop="url">nuc970-CAN通信协议实验</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T12:33:40+08:00">
+                2019-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/嵌入式/" itemprop="url" rel="index">
+                    <span itemprop="name">嵌入式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="nuc970-CAN通信协议实验"><a href="#nuc970-CAN通信协议实验" class="headerlink" title="nuc970-CAN通信协议实验"></a>nuc970-CAN通信协议实验</h1><h2 id="CAN协议简介"><a href="#CAN协议简介" class="headerlink" title="CAN协议简介"></a>CAN协议简介</h2><p>CAN是控制器局域网络(Controller Area Network, CAN)的简称，是由以研发和生产汽车电子产品著称的德国BOSCH公司开发的，并最终成为国际标准（ISO 11898），是国际上应用最广泛的现场总线之一。<br>CAN总线协议已经成为汽车计算机控制系统和嵌入式工业控制局域网的标准总线,并且拥有以CAN为底层协议的专为大型货车和重工业机械车梁设计的J1939协议.近年来,它具有高可靠性和良好的错误检测能力受到重视,被广泛的用于汽车计算机控制系统和环境温度恶劣,电磁辐射强及震动大的工业环境.</p>
+<h2 id="CAN协议的物理层"><a href="#CAN协议的物理层" class="headerlink" title="CAN协议的物理层"></a>CAN协议的物理层</h2><p>与I2C,SPI等具有始终信号同步通讯方式不同,CAN通讯并不是以时钟信号来进行同步的,它是一种异步通信方式,它只有CAN_High和CAN_Low两条信号线.共同构成一组差分信号线,以差分信号的形式进行通讯.<br>CAN物理层的形式主要分为闭环总线及开环总线网络两种.一种适合于高速通信,一种适合于远距离通信.<br>在使用CAN控制器之前,我们需要正确的配置硬件,在ISO-11898中规定,CAN总线在闭环总线40米内的最高传输速率为1Mbps.为了防止终端信号反射,终端必须搭配合适的阻抗,一般为120欧姆的电阻.(在NUC970中片上未包含CAN收发器,用户需自行选配)</p>
+<div align="center"><br>&lt;img src=”<a href="http://wx3.sinaimg.cn/large/007vJL53ly1fytba1n0tsj30c306jt8z.jpg&quot;\http://wx3.sinaimg.cn/large/007vJL53ly1fytba1n0tsj30c306jt8z.jpg&gt;" target="_blank" rel="noopener">http://wx3.sinaimg.cn/large/007vJL53ly1fytba1n0tsj30c306jt8z.jpg&quot;\http://wx3.sinaimg.cn/large/007vJL53ly1fytba1n0tsj30c306jt8z.jpg&gt;</a><br><p>图1 CAN闭环总线连接</p><br></div>
+
+<blockquote>
+<p>回环模式: 在nuc970芯片的内部,我们可以通过配置CPU使得片上的CAN控制器RX和TX短接,这样就形成了一个本地回环可以帮助我们测试CAN功能.</p>
+</blockquote>
+<p>CAN协议中对使用的CAN_High和CAN_Lowb表示的差分信号做了规定.<br>以高速的CAN协议为例,当表示逻辑1时(隐性电平),CAN_High和CAN_Lowx线上的电压均为2.5V,即他们的压差$V_H-V_L=0$V;而表示逻辑0时,CAN_High的电平为3.5V,CAN_Low的电平为1.5V,即他们的压差$V_H-V_L=2$V.其电平逻辑图如下图所示</p>
+<div align="center"><br><img src="https://ws2.sinaimg.cn/large/007vJL53ly1fytifwq4j1j30hi083weo.jpg"><br><p>图2 差分信号示意图</p><br></div><br>在ISO-11898中规定并给出的推荐电平信号如下:<br><div align="center"><br><img src="http://wx4.sinaimg.cn/large/007vJL53ly1fytibdeddtj30sb08gq8o.jpg"><br><p>图2 差分信号示意图</p><br></div>
+
+<h2 id="CAN协议层"><a href="#CAN协议层" class="headerlink" title="CAN协议层"></a>CAN协议层</h2><p>CAN协议层规定了通信逻辑</p>
+<h3 id="1-CAN的波特率及位同步"><a href="#1-CAN的波特率及位同步" class="headerlink" title="1.CAN的波特率及位同步"></a>1.CAN的波特率及位同步</h3><p>由于CAN属于异步通信,没有时钟信号线,;连接在同一个总线网络的各个节点会像串口通信那样按照约定好的波特率j进行通讯,CAN还会使用”位同步”的方式来抗干扰,吸收误差实现对总线信号的正确采样,确保通信正常.<br>发送单元在非同步的q情况下发送的每秒钟的位数称为位速率,数据传输中一个位可以分为4个段.</p>
+<ul>
+<li>同步段 (SS, Synchronization Segment)</li>
+<li>传播时间段 (PTS, Propagation Time Segment)</li>
+<li>相位缓冲段1 (PBS1, Phase Buffer Segment 1)</li>
+<li>相位缓冲段2 (PBS2, Phase Buffer Segment 2)</li>
+</ul>
+<p>这些段又可以由Time Quantum(通常称之为$T_q$,)的最小时间单位构成.<br>一个位分为4个段,每个段由若干个$T_q$构成.<br>一个位由多少个$T_q$构成,每个段又由多少个$T_q$构成,可以任意设定位时序.通过设定位时序,多个单元可以同时采样,也可以任意设定采样点.</p>
+<div align="center"><br>&lt;img src=”<a href="http://wx3.sinaimg.cn/large/007vJL53ly1fytl90fhu9j31hc0g43ze.jpg&quot;\&gt;" target="_blank" rel="noopener">http://wx3.sinaimg.cn/large/007vJL53ly1fytl90fhu9j31hc0g43ze.jpg&quot;\&gt;</a><br></div>
+
+<p>各段及其作用如下</p>
+<ul>
+<li>同步段: 多个连接在总线上的单元通过此段实现时序调整,同步进行j接收和发送工作,由隐性电平到显性电平的跳变沿或者由显性电平到隐性电平的跳变沿最好出现在此段中.</li>
+<li>传播时间段: 用于吸收网络上物理延时的段.所谓的网络延时是指发送单元的输出延迟,总线单元的传播延时和接收单元的输入延时. 这个段的时间为以上各个延时的两倍.</li>
+<li>相位缓冲段: 当信号边沿不能被包含在SS段时,可以在此段中进行补偿.由于各段以独立的时钟独自工作,细微的时钟误差会累积起来. PBS段可以吸收此误差.通过相位缓冲段加减 再同步补偿宽度段来吸收误差.再同步补偿宽度增加意味这允许误差增大,但是会下降通信速率.</li>
+</ul>
+<div align="center"><br><img src="https://ws4.sinaimg.cn/large/007vJL53ly1fytp2kr451j30wm0jtmyp.jpg"><br><p>图4.位同步示意图</p><br></div>
+
+
+<h2 id="在linux中关于CAN总线的配置工作"><a href="#在linux中关于CAN总线的配置工作" class="headerlink" title="在linux中关于CAN总线的配置工作"></a>在linux中关于CAN总线的配置工作</h2><p>部门实现的nuc977开发板中的CAN配置工作需要配置linux内核,CAN测试工具,以及文件系统构建.</p>
+<ul>
+<li>我们需要配置linux内核支持CAN驱动.</li>
+<li>为了兼容目前网上大多数开源系统的编译器,我们不采用新塘官方的编辑器.使用buildroot重新编译工具链,构建自己的文件系统.<blockquote>
+<p>经过测试我发现在3.10版本的内核中不支持最新的GCC编译器,官方采用GCC的版本为4.8,我在配置buildroot时gcc工具链配置的最低版本为4.9,测试通过可以编译完成内核.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="内核配置选项"><a href="#内核配置选项" class="headerlink" title="内核配置选项"></a>内核配置选项</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[*] Networking support  ---&gt; </span><br><span class="line">   &lt;*&gt;   CAN bus subsystem support  ---&gt; </span><br><span class="line">    &lt;*&gt;  <span class="built_in"> Raw </span>CAN Protocol (raw access with CAN-ID filtering)             </span><br><span class="line">        &lt;*&gt;   Broadcast Manager CAN Protocol (with content filtering)  </span><br><span class="line">        &lt;*&gt;   CAN Gateway/Router (with netlink configuration)          </span><br><span class="line">              CAN Device Drivers  ---&gt;   </span><br><span class="line">           &lt;*&gt; Virtual Local CAN<span class="built_in"> Interface </span>(vcan)                                    </span><br><span class="line">  │ │      &lt; &gt; Serial / USB serial CAN Adaptors (slcan)                   </span><br><span class="line">  │ │      &lt;*&gt; Platform CAN drivers with Netlink support                                │ │  </span><br><span class="line">  │ │      [*]   CAN bit-timing calculation                                             │ │  </span><br><span class="line">  │ │      [ ]   <span class="builtin-name">Enable</span> LED triggers <span class="keyword">for</span> Netlink based drivers                          │ │  </span><br><span class="line">  │ │      &lt; &gt;   Atmel AT91 onchip CAN controller                                       │ │  </span><br><span class="line">  │ │      &lt; &gt;   Philips/NXP SJA1000 devices  ---&gt;                                      │ │  </span><br><span class="line">  │ │      &lt; &gt;   Bosch C_CAN/D_CAN devices  ---&gt;                                        │ │  </span><br><span class="line">  │ │      &lt;*&gt;   NUC970 CAN0/CAN1 devices  ---&gt;                          </span><br><span class="line">                  [*]   NUC970 CAN0 support                                             │ │  </span><br><span class="line">  │ │             [*]     <span class="builtin-name">Enable</span> CAN0 wake-up function                                  │ │  </span><br><span class="line">  │ │                       NUC970 CAN0 pin selection (Tx:PH3, Rx:PH2)                  │ │  </span><br><span class="line">  │ │      [ ]   NUC970 CAN1 support             </span><br><span class="line">  │ │      &lt; &gt;   Bosch CC770 <span class="keyword">and</span> Intel AN82527 devices  ---&gt;             </span><br><span class="line">  │ │            CAN USB interfaces  ---&gt;                              </span><br><span class="line">  │ │      &lt; &gt;   Softing Gmbh CAN generic support                     </span><br><span class="line">  │ │      [ ] CAN devices debugging messages</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>之前有所疑惑,在新塘给出的linux内核中,将引脚正确配置对,就可以实现对应的功能,但是在国内百度云,还有一个淘宝给出的代码中,在NUC970系列芯片关于配置CAN在PI端口是均有错误.如果你看到这篇文档,请查阅自己的内核代码,是否有问题.具体可以查看在论坛中的讨论.<br><a href="https://debugdump.com/viewtopic.php?pid=14094#p14094" target="_blank" rel="noopener">https://debugdump.com/viewtopic.php?pid=14094#p14094</a></p>
+</blockquote>
+<h3 id="buildroot-配置工作"><a href="#buildroot-配置工作" class="headerlink" title="buildroot 配置工作"></a>buildroot 配置工作</h3><p>这一块的问题我在之前的一篇博文中已经写过了.这里需要指明的是,关于GCC工具链的版本,如果你不做配置,默认使用的是最新的GCC版本,新塘官方linux的内核配套的GCC工具连版本为4.8,测试后发现在4.9下也能正常编译(最新的buildroot最低配置为4.9).<br>配置工作如下:<br>简单说一下,这里的配置工作和内核配置方法十分相似:<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># make menuconfig</span></span><br></pre></td></tr></table></figure></p>
+<p>然后我们这里需要配置GCC的版本<br><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">T<span class="function"><span class="title">oolchain</span>  ---&gt;</span></span><br><span class="line">   GCC <span class="function"><span class="title">compiler</span> Version (gcc 4.9.x)  ---&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>编译之后在output/host路径下即是当前被编译出来的工具链,你可以打包到/usr/local下,然后正确配置环境变量即可使用该工具链.如果之前有新塘的工具链最好取消工具链中的链接文件(arm-linux-XXXXXX 的文件都是软链接文件). 在output/image/路径下有编译出来的根文件系统.</p>
+<h3 id="canutils-的编译工作"><a href="#canutils-的编译工作" class="headerlink" title="canutils 的编译工作"></a>canutils 的编译工作</h3><p>这里想参考一下mcuzone中的can工具编译脚本(PS:其实以后可以尝试把自己做过的工作尝试吧写一个脚本来做,在自己工作环境下适用就可以了)</p>
+<div><br><img src="http://wx1.sinaimg.cn/large/007vJL53ly1fz7f9i4xazj30q80p90xc.jpg"><br></div>
+
+<h3 id="linux下的测试工作"><a href="#linux下的测试工作" class="headerlink" title="linux下的测试工作"></a>linux下的测试工作</h3><p>接下来我们需要吧IP命令和can-utils中的命令放置在我们的文件系统中.(实际上这个工作在脚本中已经做了相应的工作). 然后就是测试CAN接口.<br>测试环境如下: 开发板供电,连接DB9直连线(常用串口线是交叉线,需要注意),与周立功的USBCAN-II设备相连.<br>在开发板上使用如下命令测试,使开发作为接收方接收CAN信息:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ip link <span class="built_in">set</span> can0 up <span class="built_in">type</span> can bitrate 1000000</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> candump can0 -t d</span></span><br></pre></td></tr></table></figure>
+<p>在电脑端设置配置USBCAN-II为1000K波特率进行测试.发送数据帧,观察开发板能否接收到数据.<br>其他常用命令如下:</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># ip -det -stat link show can0</span><br><span class="line"><span class="comment">// 查看can0接口的详细信息</span></span><br><span class="line"></span><br><span class="line"># sudo modprobe vcan   </span><br><span class="line"><span class="comment">//加载CAN虚拟模块</span></span><br><span class="line"></span><br><span class="line"># ip link set can0 up type can bitrate <span class="number">800000</span> loopback on</span><br><span class="line"><span class="comment">// 设置回环模式，自发自收，用于测试芯片硬件是否正常,loopback不一定支持</span></span><br><span class="line"></span><br><span class="line"># ip link set can0 down</span><br><span class="line"><span class="comment">// 关闭CAN0网络</span></span><br><span class="line"></span><br><span class="line"># cansend can0 <span class="number">0x11</span> <span class="number">0x22</span> <span class="number">0x33</span> <span class="number">0x44</span> <span class="number">0x55</span> <span class="number">0x66</span> <span class="number">0x77</span> <span class="number">0x88</span></span><br><span class="line"><span class="comment">//发送默认ID为0x1的can标准帧，数据为0x11 22 33 44 55 66 77 88 每次最大8个byte</span></span><br><span class="line"></span><br><span class="line"># cansend can0 -i <span class="number">0x800</span> <span class="number">0x11</span> <span class="number">0x22</span> <span class="number">0x33</span> <span class="number">0x44</span> <span class="number">0x55</span> <span class="number">0x66</span> <span class="number">0x77</span> <span class="number">0x88</span> -e</span><br><span class="line"><span class="comment">// -e 表示扩展帧，CAN_ID最大29bit，标准帧CAN_ID最大11bit  -i表示CAN_ID</span></span><br><span class="line"></span><br><span class="line"># cansend can0 -i <span class="number">0x02</span> <span class="number">0x11</span> <span class="number">0x12</span> --loop=<span class="number">20</span></span><br><span class="line"><span class="comment">// --loop 表示发送20个包</span></span><br><span class="line"></span><br><span class="line"># candump can0</span><br><span class="line"><span class="comment">// 接收CAN0数据</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2018/12/18/linux命令使用记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/18/linux命令使用记录/" itemprop="url">linux命令使用记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-18T11:23:46+08:00">
+                2018-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux使用/" itemprop="url" rel="index">
+                    <span itemprop="name">linux使用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="linux命令使用"><a href="#linux命令使用" class="headerlink" title="linux命令使用"></a>linux命令使用</h1><blockquote>
+<p>这篇博文打算记录我使用Linux过程中的linux命令使用记录，有些命令及其参数设置上面我们不是经常使用，但是却能够很大的提升我们使用linux的效率。自己老是记不住这些命令，为了以后不用每一次都去Google上去查，自己开一个博文记录下。</p>
+</blockquote>
+<h2 id="批量删除软连接操作"><a href="#批量删除软连接操作" class="headerlink" title="批量删除软连接操作"></a>批量删除软连接操作</h2><p>问题描述： 做嵌入式开发的时候有的时候我需要测试不同工具链下的编译结果，每一个gcc工具链中都把自己的gcc程序软连接成文arm-linux-gcc，所以为了避免冲突。我需要删除工具链目录bin下的所有软连接，使用工具包中原始的工具名称来达到区分我到底使用的是哪一套软件工具链的目的。<br><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">find</span> -<span class="built_in">type</span> l -delete [<span class="built_in">PATH</span>]</span><br></pre></td></tr></table></figure></p>
+<p>上面这条命令就可以将[PATH]路径下的所有软链接都删除掉。用的是find这个Linux下非常实用的命令，type参数限定了文件类型为l（links），加上-delete删除参数就可以实现找出所有软链接并删除。</p>
+<p>如果是要删除失效的软链接，需要加上一个-L参数，表示追踪软链接:<br><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">find</span> -L [<span class="built_in">PATH</span>] -<span class="built_in">type</span> l -delete</span><br></pre></td></tr></table></figure></p>
+<h2 id="linux打包解包命令"><a href="#linux打包解包命令" class="headerlink" title="linux打包解包命令"></a>linux打包解包命令</h2><p>问题描述: 自己在做开发的时候有时候需要讲自己制作好的根文件系统打包起来.之前常用的是解包命令,所以在此记录下,tar的常用打包解包命令.</p>
+<blockquote>
+<p>还是学会使用 –help 或者man吧.</p>
+</blockquote>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Examples:</span><br><span class="line">  tar -cf archive.tar foo bar  # Create archive.tar <span class="keyword">from</span> files foo <span class="keyword">and</span> bar.</span><br><span class="line">  tar -tvf archive.tar         # List all files <span class="keyword">in</span> archive.tar verbosely.</span><br><span class="line">  tar -xf archive.tar          # Extract all files <span class="keyword">from</span> archive.tar.</span><br><span class="line"></span><br><span class="line">    -j, --bzip2               <span class="built_in"> filter </span>the archive through bzip2</span><br><span class="line">    -J, --xz                  <span class="built_in"> filter </span>the archive through xz</span><br><span class="line">        --lzip                <span class="built_in"> filter </span>the archive through lzip</span><br><span class="line">        --lzma                <span class="built_in"> filter </span>the archive through lzma</span><br><span class="line">        --lzop                <span class="built_in"> filter </span>the archive through lzop</span><br><span class="line">        --no-auto-compress     <span class="keyword">do</span> <span class="keyword">not</span> use archive suffix <span class="keyword">to</span> determine the</span><br><span class="line">                                compression program</span><br><span class="line">    -z, --gzip, --gunzip, --ungzip  <span class="built_in"> filter </span>the archive through gzip</span><br><span class="line">        --zstd                <span class="built_in"> filter </span>the archive through zstd</span><br><span class="line">    -Z, --compress, --uncompress  <span class="built_in"> filter </span>the archive through compress</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2018/12/14/buildroot-嵌入式构建方案-工具链-文件系统-内核-busybox编译工作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/14/buildroot-嵌入式构建方案-工具链-文件系统-内核-busybox编译工作/" itemprop="url">buildroot-嵌入式构建方案-工具链-文件系统-内核-busybox编译工作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-14T16:12:56+08:00">
+                2018-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/嵌入式/" itemprop="url" rel="index">
+                    <span itemprop="name">嵌入式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="buildroot-嵌入式构建方案-工具链-文件系统-内核-busybox编译工作"><a href="#buildroot-嵌入式构建方案-工具链-文件系统-内核-busybox编译工作" class="headerlink" title="buildroot-嵌入式构建方案-工具链-文件系统-内核-busybox编译工作"></a>buildroot-嵌入式构建方案-工具链-文件系统-内核-busybox编译工作</h1><blockquote>
+<p>写在前面： 本人理解能力有限，文章所有内容基于个人理解，如果有错误，请包涵。<br>最近在做嵌入式系统的构建，测试工作的时候遇到很多问题，其中遇到要重新编译iprouter2的软件包，即linux中的ip命令，目前怀疑是开发板厂商给的工具链有问题，所以打算重新制作一个编译工具链来解决这个问题。在晕哥的论坛中给出的解决方案 buildroot，发现这个软件可以解决我们之前存在的 制作文件系统，编译工具链，编译内核，特别是文件系统中的诸多命令的集成等问题，使得在做嵌入式开发的时候显得很方便。<br>但是个人走过的路告诉我，最好你还是有过编译busybox，Linux内核，uboot等的基础在使用buildroot会更加容易理解buildroot该如何配置，使得自己能够轻松的配置成功。</p>
+</blockquote>
+<blockquote>
+<p><strong>虽然不知道我自己搭建的博客后续会有多少人看，但是这里非常感谢晕哥，义务帮晕哥做一个推广，表示感谢。一个很好的嵌入式学习论坛 <a href="https://debugdump.com/index.html" target="_blank" rel="noopener">https://debugdump.com/index.html</a></strong></p>
+</blockquote>
+<blockquote>
+<p>Buildroot是Linux平台上一个开源的嵌入式Linux系统自动构建框架。整个Buildroot是由Makefile脚本和Kconfig配置文件构成的。你可以和编译Linux内核一样，通过buildroot配置，menuconfig修改，编译出一个完整的可以直接烧写到机器上运行的Linux系统软件(包含boot、kernel、rootfs以及rootfs中的各种库和应用程序)。</p>
+</blockquote>
+<h2 id="1-buildroot编译配置"><a href="#1-buildroot编译配置" class="headerlink" title="1. buildroot编译配置"></a>1. buildroot编译配置</h2><p>第一次做尝试的时候，我是从buildroot官网上直接下载的最新板的源码来配置，结果没有能够编译成功，Google搜索了下发现nuvoton官方其实已经又适配的buildroot版本，代码托管在了github。链接如下：nuvoton的buildroot软件包<a href="https://github.com/OpenNuvoton/NUC970_Buildroot" target="_blank" rel="noopener">https://github.com/OpenNuvoton/NUC970_Buildroot</a>.但是这里需要nuc970开发板的相关配置。因此我git了下来，使用的编译版本为buildroot的最新版本。</p>
+<p>接下来我假设你已经下载好了buildroot的最新版源码包。我使用的版本时2018.02.8的版本下载地址<a href="https://buildroot.org/downloads/buildroot-2018.02.8.tar.bz2" target="_blank" rel="noopener">https://buildroot.org/downloads/buildroot-2018.02.8.tar.bz2</a><br>将我们下载的文件解压,进入buildroot主目录，配置buildroot。具体命令如下。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># <span class="selector-tag">tar</span> <span class="selector-tag">xzv</span> <span class="selector-tag">buildroot-2018</span><span class="selector-class">.02</span><span class="selector-class">.8</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br><span class="line"># <span class="selector-tag">cd</span> <span class="selector-tag">buildroot-2018</span><span class="selector-class">.02</span><span class="selector-class">.8</span></span><br><span class="line"># <span class="selector-tag">make</span> <span class="selector-tag">menuconfig</span></span><br></pre></td></tr></table></figure></p>
+<p>这里可能需要管理员权限，需要要ncures库的支持，编译过内核或者busybox的朋友应该都已经安装了，没有安装的朋友可以自行查阅下。（linux的发行版不同可能存在差异，笔者使用的是archlinux，具体安装可以参考archwiki，其他发行版请自行查阅相关文档）<br>接下来你看到的界面就比较熟悉了，和Linux内核，uboot，busybox的配置界面。</p>
+<div align="center"><br><img src="https://s1.ax1x.com/2018/12/18/FBU3Se.md.png"><br><p>图1 buildroot配置界面</p><br></div>
+
+<p>我们一个一个的来看具体的配置，首先是Target配置，这里是要们配置为哪一种目标系统来编译buildroot。我配置的目标板为nuc970。（这一块的配置我是参考nuvoton官网的buildroot配置）<br><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">│ │          <span class="type">Target</span> <span class="type">Architecture</span> (<span class="type">ARM</span> (little endian))  <span class="comment">---&gt;             │ │  </span></span><br><span class="line">│ │          <span class="type">Target</span> <span class="type">Binary</span> <span class="type">Format</span> (<span class="type">ELF</span>)  <span class="comment">---&gt;                            │ │  </span></span><br><span class="line">│ │          <span class="type">Target</span> <span class="type">Architecture</span> <span class="type">Variant</span> (arm926t)  <span class="comment">---&gt;                 │ │  </span></span><br><span class="line">│ │      [ ] <span class="type">Enable</span> <span class="type">VFP</span> extension sup<span class="keyword">port</span>                                │ │  </span><br><span class="line">│ │          Target ABI (<span class="type">EABI</span>)  <span class="comment">---&gt;                                     │ │  </span></span><br><span class="line">│ │          Floating point strategy (<span class="type">Soft</span> float)  <span class="comment">---&gt;                  │ │  </span></span><br><span class="line">│ │          ARM instruction set (<span class="type">ARM</span>)  <span class="comment">---&gt;                             │ │</span></span><br></pre></td></tr></table></figure></p>
+<p> Target Architecture ==&gt;目标体系架构 nuc970属于ARM体系架构小端序(<a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/" target="_blank" rel="noopener">一种字节序</a>)<br> Target Binary Format ===&gt; 目标二进制文件格式，通常linux二进制文件格式<br> Target Architecture Variant ===&gt; 应该是指具体的目标体系架构 nuc970 是ARM架构下的arm926t<br> Target ABI ===&gt; 目标板二进制接口（ABI，Application Binary Interface）<br> Floating point strategy ===&gt;浮点数计算策略 软件浮点计算<br> ARM instruction set ===&gt; ARM指令集 使用arm指令集</p>
+<p> 接下来是build选项配置，这里主要是来确定编译过程中的软件包下载地址，编译中间文件的存放位置等信息。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">┌───────────────────────────────────────────────────────────────────────────────────  ┐ │  </span><br><span class="line">│ │          Commands  <span class="comment">---&gt;                                                           │ │  </span></span><br><span class="line">│ │      ($(CONFIG_DIR)/defconfig) Location to save buildroot config                  │ │  </span><br><span class="line">│ │      ($(TOPDIR)/dl) Download dir                                                  │ │  </span><br><span class="line">│ │      ($(BASE_DIR)/host) Host dir                                                  │ │  </span><br><span class="line">│ │          Mirrors and Download locations  <span class="comment">---&gt;                                     │ │  </span></span><br><span class="line">│ │      (0) Number of jobs to run simultaneously (0 for auto)                        │ │  </span><br><span class="line">│ │      [ ] Enable compiler <span class="keyword">cache</span>                                                    │ │  </span><br><span class="line">│ │      [ ] <span class="keyword">build</span> packages <span class="keyword">with</span> debugging symbols                                    │ │  </span><br><span class="line">│ │      [ ] strip target binaries                                                    │ │  </span><br><span class="line">│ │          gcc optimization <span class="keyword">level</span> (<span class="keyword">optimize</span> <span class="keyword">for</span> <span class="keyword">size</span>)  <span class="comment">---&gt;                         │ │  </span></span><br><span class="line">│ │      [ ] <span class="keyword">Enable</span> google-breakpad support                                           │ │  </span><br><span class="line">│ │          libraries (<span class="keyword">shared</span> <span class="keyword">only</span>)  <span class="comment">---&gt;                                            │ │  </span></span><br><span class="line">│ │      ($(CONFIG_DIR)/local.mk) location <span class="keyword">of</span> a <span class="keyword">package</span> override <span class="keyword">file</span>                 │ │  </span><br><span class="line">│ │      ()  <span class="keyword">global</span> <span class="keyword">patch</span> directories                                                 │ │  </span><br><span class="line">│ │          <span class="keyword">Advanced</span>  <span class="comment">---&gt;                                                           │ │  </span></span><br><span class="line">│ │          *** <span class="keyword">Security</span> Hardening Options ***                                       │ │  </span><br><span class="line">│ │          Stack Smashing <span class="keyword">Protection</span> (<span class="keyword">None</span>)  <span class="comment">---&gt;                                   │ │  </span></span><br><span class="line">│ │          RELRO <span class="keyword">Protection</span> (<span class="keyword">None</span>)  <span class="comment">---&gt;                                            │ │  </span></span><br><span class="line">│ │          Buffer-<span class="keyword">overflow</span> Detection (FORTIFY_SOURCE) (<span class="keyword">None</span>)  <span class="comment">---&gt;                  │ │  </span></span><br><span class="line">│ │                                                                                   │ │</span><br><span class="line">│ └───────────────────────────────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure></p>
+<p> 这里基本没有什么改动，使用默认配置就可以</p>
+<p>toolchain选项，这里是编译目标板使用的交叉工具链<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">┌───────────────────────────────────────────────────────────────────────────────────┐ │  </span><br><span class="line"> │ │          <span class="selector-tag">Toolchain</span> <span class="selector-tag">type</span> (Buildroot toolchain)  <span class="selector-tag">---</span>&gt;  #使用<span class="selector-tag">buildroot</span>编译的工具链    │ │  </span><br><span class="line"> │ │          *** <span class="selector-tag">Toolchain</span> <span class="selector-tag">Buildroot</span> <span class="selector-tag">Options</span> ***                                      │ │  </span><br><span class="line"> │ │      (nuc970) <span class="selector-tag">custom</span> <span class="selector-tag">toolchain</span> <span class="selector-tag">vendor</span> <span class="selector-tag">name</span>                  # 目标板名字           │ │  </span><br><span class="line"> │ │          <span class="selector-tag">C</span> <span class="selector-tag">library</span> (glibc)  <span class="selector-tag">---</span>&gt;                            # <span class="selector-tag">GCC</span>库               │ │  </span><br><span class="line"> │ │          *** <span class="selector-tag">Kernel</span> <span class="selector-tag">Header</span> <span class="selector-tag">Options</span> ***                                            │ │  </span><br><span class="line"> │ │          <span class="selector-tag">Kernel</span> <span class="selector-tag">Headers</span> (Same as kernel being built)  <span class="selector-tag">---</span>&gt;                        │ │  </span><br><span class="line"> │ │          <span class="selector-tag">Custom</span> <span class="selector-tag">kernel</span> <span class="selector-tag">headers</span> <span class="selector-tag">series</span> (<span class="number">3.10</span>.x)  <span class="selector-tag">---</span>&gt;        # 使用内核版本         │ │  </span><br><span class="line"> │ │          *** <span class="selector-tag">Binutils</span> <span class="selector-tag">Options</span> ***                                                 │ │  </span><br><span class="line"> │ │          <span class="selector-tag">Binutils</span> <span class="selector-tag">Version</span> (binutils <span class="number">2.29</span>.<span class="number">1</span>)  <span class="selector-tag">---</span>&gt;           # 使用<span class="selector-tag">binutils</span>版本     │ │  </span><br><span class="line"> │ │      ()  <span class="selector-tag">Additional</span> <span class="selector-tag">binutils</span> <span class="selector-tag">options</span>                                              │ │  </span><br><span class="line"> │ │          *** <span class="selector-tag">GCC</span> <span class="selector-tag">Options</span> ***                                                      │ │  </span><br><span class="line"> │ │          <span class="selector-tag">GCC</span> <span class="selector-tag">compiler</span> <span class="selector-tag">Version</span> (gcc <span class="number">6</span>.x)  <span class="selector-tag">---</span>&gt;               # 使用<span class="selector-tag">GCC</span>版本          │ │  </span><br><span class="line"> │ │      ()  <span class="selector-tag">Additional</span> <span class="selector-tag">gcc</span> <span class="selector-tag">options</span>                                                   │ │  </span><br><span class="line"> │ │      <span class="selector-attr">[*]</span> <span class="selector-tag">Enable</span> <span class="selector-tag">C</span>++ <span class="selector-tag">support</span>                                 # 是否支持<span class="selector-tag">C</span>++          │ │  </span><br><span class="line"> │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">Enable</span> <span class="selector-tag">Fortran</span> <span class="selector-tag">support</span>                                                   │ │  </span><br><span class="line"> │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">Enable</span> <span class="selector-tag">compiler</span> <span class="selector-tag">link-time-optimization</span> <span class="selector-tag">support</span>                           │ │  </span><br><span class="line"> │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">Enable</span> <span class="selector-tag">compiler</span> <span class="selector-tag">OpenMP</span> <span class="selector-tag">support</span>                                           │ │  </span><br><span class="line"> │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">Enable</span> <span class="selector-tag">graphite</span> <span class="selector-tag">support</span>                                                  │ │  </span><br><span class="line"> │ │          *** <span class="selector-tag">Host</span> <span class="selector-tag">GDB</span> <span class="selector-tag">Options</span> ***                                                 │ │  </span><br><span class="line"> │ │      <span class="selector-attr">[*]</span> <span class="selector-tag">Build</span> <span class="selector-tag">cross</span> <span class="selector-tag">gdb</span> <span class="selector-tag">for</span> <span class="selector-tag">the</span> <span class="selector-tag">host</span>          # 构建宿主机的<span class="selector-tag">GDB</span>交叉调试            │ │  </span><br><span class="line"> │ │      <span class="selector-attr">[ ]</span>   <span class="selector-tag">TUI</span> <span class="selector-tag">support</span>                                                            │ │  </span><br><span class="line"> │ │      <span class="selector-attr">[ ]</span>   <span class="selector-tag">Python</span> <span class="selector-tag">support</span>                                                         │ │  </span><br><span class="line"> │ │      <span class="selector-attr">[ ]</span>   <span class="selector-tag">Simulator</span> <span class="selector-tag">support</span>                                                      │ │  </span><br><span class="line"> │ │            <span class="selector-tag">GDB</span> <span class="selector-tag">debugger</span> <span class="selector-tag">Version</span> (gdb <span class="number">7.11</span>.x)  <span class="selector-tag">---</span>&gt;                                │ │  </span><br><span class="line"> │ │          *** <span class="selector-tag">Toolchain</span> <span class="selector-tag">Generic</span> <span class="selector-tag">Options</span> ***                                        │ │  </span><br><span class="line"> │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">Copy</span> <span class="selector-tag">gconv</span> <span class="selector-tag">libraries</span>                                                     │ │  </span><br><span class="line"> │ │      <span class="selector-attr">[*]</span> <span class="selector-tag">Enable</span> <span class="selector-tag">MMU</span> <span class="selector-tag">support</span>                           # 开启<span class="selector-tag">MMU</span>支持                │ │  </span><br><span class="line"> │ │      ()  <span class="selector-tag">Target</span> <span class="selector-tag">Optimizations</span>                                                     │ │  </span><br><span class="line"> │ │      ()  <span class="selector-tag">Target</span> <span class="selector-tag">linker</span> <span class="selector-tag">options</span>                                                    │ │  </span><br><span class="line"> │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">Register</span> <span class="selector-tag">toolchain</span> <span class="selector-tag">within</span> <span class="selector-tag">Eclipse</span> <span class="selector-tag">Buildroot</span> <span class="selector-tag">plug-in</span>                      │ │  </span><br><span class="line"> │ └───────────────────────────────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure></p>
+<p>  system configuretion 系统配置，这里会编译出根文件系统，所以需要根文件系统的相关配置。<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">│ ┌───────────────────────────────────────────────────────────────────────────────────┐ │  </span><br><span class="line">│ │          Root FS skeleton (default target skeleton)  <span class="comment">---&gt;                         │ │  </span></span><br><span class="line">│ │      (XXXXXXXX) System hostname                        <span class="comment">#自定义看自己               │ │  </span></span><br><span class="line">│ │      (Welcome <span class="keyword">to</span> Buildroot) System banner                                         │ │  </span><br><span class="line">│ │          Passwords encoding (md5)  <span class="comment">---&gt;                                           │ │  </span></span><br><span class="line">│ │          Init system (BusyBox)  <span class="comment">---&gt;                                              │ │  </span></span><br><span class="line">│ │          /dev management (Dynamic using devtmpfs + mdev)  <span class="comment">---&gt;     #这里需要配置   │ │  </span></span><br><span class="line">│ │      (system/device_table.txt) Path <span class="keyword">to</span> <span class="keyword">the</span> permission tables                      │ │  </span><br><span class="line">│ │      [ ] support extended attributes <span class="keyword">in</span> device tables                             │ │  </span><br><span class="line">│ │      [ ] Use symlinks <span class="keyword">to</span> /usr <span class="keyword">for</span> /bin, /sbin <span class="keyword">and</span> /lib                            │ │  </span><br><span class="line">│ │      [*] Enable root login <span class="keyword">with</span> password           <span class="comment">#配置登陆需要密码               │ │  </span></span><br><span class="line">│ │      (xxxxxxxx) Root password                                                     │ │  </span><br><span class="line">│ │          /bin/sh (busybox' default shell)  <span class="comment">---&gt;                                   │ │  </span></span><br><span class="line">│ │      [*] Run a getty (login prompt) <span class="keyword">after</span> boot  <span class="comment">---&gt;   #登陆成功后运行终端          │ │  </span></span><br><span class="line">│ │      [*] remount root filesystem <span class="built_in">read</span>-<span class="built_in">write</span> during boot                           │ │  </span><br><span class="line">│ │      ()  Network interface <span class="keyword">to</span> configure <span class="keyword">through</span> DHCP                              │ │  </span><br><span class="line">│ │      [*] Purge unwanted locales                                                   │ │  </span><br><span class="line">│ │      (C en_US) Locales <span class="keyword">to</span> keep                                                    │ │  </span><br><span class="line">│ │      ()  Generate locale data                                                     │ │  </span><br><span class="line">│ │      [ ] Enable Native Language Support (NLS)                                     │ │  </span><br><span class="line">│ │      [ ] Install timezone info                                                    │ │  </span><br><span class="line">│ │      ()  Path <span class="keyword">to</span> <span class="keyword">the</span> users tables                                                 │ │  </span><br><span class="line">│ │      ()  Root filesystem overlay directories                                      │ │  </span><br><span class="line">│ │      ()  Custom scripts <span class="keyword">to</span> <span class="built_in">run</span> <span class="keyword">before</span> creating filesystem images                  │ │  </span><br><span class="line">│ │      ()  Custom scripts <span class="keyword">to</span> <span class="built_in">run</span> inside <span class="keyword">the</span> fakeroot environment                    │ │  </span><br><span class="line">│ │      ()  Custom scripts <span class="keyword">to</span> <span class="built_in">run</span> <span class="keyword">after</span> creating filesystem images                   │ │  </span><br><span class="line">│ └───────────────────────────────────────────────────────────────────────────────────┘ │</span><br></pre></td></tr></table></figure></p>
+<p>kenel 配置,这里使用的是新唐托管在github的linux3.10内核代码，使用nuc972的默认配置<br>PS:这里的配置如果你配置过nuvoton的3.10版本的内核就知道该如何填写</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────────────────────────────────────┐ │  </span><br><span class="line">│ │      [*] Linux Kernel                                                             │ │  </span><br><span class="line">│ │            *** Linux kernel <span class="keyword">in</span> thumb mode may be broken <span class="keyword">with</span> binutils &gt;= <span class="number">2.29</span> *** │ │  </span><br><span class="line">│ │            Kernel <span class="built_in">version</span> (Custom Git repository)  <span class="comment">---&gt;                           │ │  </span></span><br><span class="line">│ │      (<span class="keyword">https</span>://github.com/OpenNuvoton/NUC970_Linux_Kernel.git ) <span class="built_in">URL</span> <span class="keyword">of</span> custom repos│ │  </span><br><span class="line">│ │      (master) Custom repository <span class="built_in">version</span>                                           │ │</span><br><span class="line">│ │      <span class="comment"># 使用自定义内核，采用nuvoton官方维护的linux3.10内核，                          │ │</span></span><br><span class="line">│ │ 	   <span class="comment"># 代码托管在github，使用master分支                                             │ │ </span></span><br><span class="line">│ │      ()    Custom kernel patches                                                  │ │  </span><br><span class="line">│ │            Kernel configuration (Using <span class="keyword">an</span> <span class="keyword">in</span>-tree defconfig <span class="built_in">file</span>)  <span class="comment">---&gt;           │ │  </span></span><br><span class="line">│ │      (nuc972) Defconfig name           <span class="comment"># 默认配置名 nuc972_defconfig                │ │  </span></span><br><span class="line">│ │      ()    Additional configuration fragment <span class="built_in">files</span>                                │ │  </span><br><span class="line">│ │            Kernel binary <span class="built_in">format</span> (zImage)  <span class="comment">---&gt;                                    │ │  </span></span><br><span class="line">│ │            Kernel compression <span class="built_in">format</span> (gzip compression)  <span class="comment">---&gt;                     │ │  </span></span><br><span class="line">│ │      [ ]   Build <span class="keyword">a</span> Device Tree Blob (DTB)                                         │ │  </span><br><span class="line">│ │      [ ]   Install kernel image <span class="built_in">to</span> /boot <span class="keyword">in</span> target                                │ │  </span><br><span class="line">│ │      [ ]   Needs host OpenSSL                                                     │ │  </span><br><span class="line">│ │      [ ]   Needs host libelf                                                      │ │  </span><br><span class="line">│ │            Linux Kernel Extensions  <span class="comment">---&gt;                                          │ │  </span></span><br><span class="line">│ │            Linux Kernel Tools  <span class="comment">---&gt;                                               │ │  </span></span><br><span class="line">  └───────────────────────────────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+<p>target package配置，这里是来配置你的Linux系统中所带软件包的配置，比如iprouter2，htop，ssh等诸多linux软件包，根据自己的需要，进入选项查看一下，进行配置。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">┌───────────────────────────────────────────────────────────────────────────────────┐ │  </span><br><span class="line">│ │      -*- BusyBox                                                                  │ │  </span><br><span class="line">│ │      (/home/cookie/Downloads/buildroot-2018.02.8/board/nuvonto/busybox-nuc970.conf│ │</span><br><span class="line">│ │	  # 这里需要你给出一个默认的busybox的配置文件								       │ │   </span><br><span class="line">        # 这里我复制了nuvoton的buildroot中的配置文件到自己的目录下                        │ │</span><br><span class="line">│ │      ()    Additional BusyBox configuration fragment files                        │ │  </span><br><span class="line">│ │      [ ]   Show packages that are also provided by busybox                        │ │  </span><br><span class="line">│ │      [ ]   <span class="builtin-name">Enable</span> SELinux support                                                 │ │  </span><br><span class="line">│ │      [ ]   Individual binaries                                                    │ │  </span><br><span class="line">│ │      [ ]   Install the<span class="built_in"> watchdog </span>daemon startup<span class="built_in"> script </span>                            │ │  </span><br><span class="line">│ │          Audio <span class="keyword">and</span> video applications  ---&gt;                                       │ │  </span><br><span class="line">│ │          Compressors <span class="keyword">and</span> decompressors  ---&gt;                                      │ │  </span><br><span class="line">│ │          Debugging, profiling <span class="keyword">and</span> benchmark  ---&gt;                                 │ │  </span><br><span class="line">│ │          Development tools  ---&gt;                                                  │ │  </span><br><span class="line">│ │          Filesystem <span class="keyword">and</span> flash utilities  ---&gt;                                     │ │  </span><br><span class="line">│ │          Fonts, cursors, icons, sounds <span class="keyword">and</span> themes  ---&gt;                           │ │  </span><br><span class="line">│ │          Games  ---&gt;                                                              │ │  </span><br><span class="line">│ │          Graphic libraries <span class="keyword">and</span> applications (graphic/text)  ---&gt;                  │ │  </span><br><span class="line">│ │         <span class="built_in"> Hardware </span>handling  ---&gt;                                                  │ │  </span><br><span class="line">│ │          Interpreter languages <span class="keyword">and</span> scripting  ---&gt;                                │ │  </span><br><span class="line">│ │          Libraries  ---&gt;                                                          │ │  </span><br><span class="line">│ │          Mail  ---&gt;                                                               │ │  </span><br><span class="line">│ │          Miscellaneous  ---&gt;                                                      │ │  </span><br><span class="line">│ │          Networking applications  ---&gt;                                            │ │  </span><br><span class="line">│ │          Package managers  ---&gt;                                                   │ │  </span><br><span class="line">│ │          Real-Time  ---&gt;                                                          │ │  </span><br><span class="line">│ │          Security  ---&gt;                                                           │ │  </span><br><span class="line">│ │          Shell <span class="keyword">and</span> utilities  ---&gt;                                                │ │  </span><br><span class="line">│ │         <span class="built_in"> System </span>tools  ---&gt;                                                       │ │  </span><br><span class="line">│ │          Text editors <span class="keyword">and</span> viewers  ---&gt;                                           │ │  </span><br><span class="line">│ └───────────────────────────────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure></p>
+<p>filesystem image 选择文件系统的镜像，这里我配置了ext3文件系统的支持，后期我需要将文件系统以ext3格式写到SD中。其他支持看自己的需求。<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">│ ┌───────────────────────────────────────────────────────────────────────────────────┐ │  </span><br><span class="line">  │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">axfs</span> <span class="selector-tag">root</span> <span class="selector-tag">filesystem</span>                                                     │ │  </span><br><span class="line">  │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">cloop</span> <span class="selector-tag">root</span> <span class="selector-tag">filesystem</span> <span class="selector-tag">for</span> <span class="selector-tag">the</span> <span class="selector-tag">target</span> <span class="selector-tag">device</span>                              │ │  </span><br><span class="line">  │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">cpio</span> <span class="selector-tag">the</span> <span class="selector-tag">root</span> <span class="selector-tag">filesystem</span> (for use as an initial RAM filesystem)          │ │  </span><br><span class="line">  │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">cramfs</span> <span class="selector-tag">root</span> <span class="selector-tag">filesystem</span>                                                   │ │  </span><br><span class="line">  │ │      <span class="selector-attr">[*]</span> <span class="selector-tag">ext2</span>/<span class="selector-tag">3</span>/<span class="selector-tag">4</span> <span class="selector-tag">root</span> <span class="selector-tag">filesystem</span>                                                 │ │  </span><br><span class="line">  │ │            <span class="selector-tag">ext2</span>/<span class="selector-tag">3</span>/<span class="selector-tag">4</span> <span class="selector-tag">variant</span> (ext3)  <span class="selector-tag">---</span>&gt;                                          │ │  </span><br><span class="line">  │ │      ()    <span class="selector-tag">filesystem</span> <span class="selector-tag">label</span>                                                       │ │  </span><br><span class="line">  │ │      (<span class="number">60</span>M) <span class="selector-tag">exact</span> <span class="selector-tag">size</span>                                                             │ │  </span><br><span class="line">  │ │      (<span class="number">0</span>)   <span class="selector-tag">exact</span> <span class="selector-tag">number</span> <span class="selector-tag">of</span> <span class="selector-tag">inodes</span> (leave at <span class="number">0</span> for auto calculation)               │ │  </span><br><span class="line">  │ │      (<span class="number">5</span>)   <span class="selector-tag">reserved</span> <span class="selector-tag">blocks</span> <span class="selector-tag">percentage</span>                                             │ │  </span><br><span class="line">  │ │      (-O ^<span class="number">64</span>bit) <span class="selector-tag">additional</span> <span class="selector-tag">mke2fs</span> <span class="selector-tag">options</span>                                        │ │  </span><br><span class="line">  │ │            <span class="selector-tag">Compression</span> <span class="selector-tag">method</span> (no compression)  <span class="selector-tag">---</span>&gt;                              │ │  </span><br><span class="line">  │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">initial</span> <span class="selector-tag">RAM</span> <span class="selector-tag">filesystem</span> <span class="selector-tag">linked</span> <span class="selector-tag">into</span> <span class="selector-tag">linux</span> <span class="selector-tag">kernel</span>                          │ │  </span><br><span class="line">  │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">jffs2</span> <span class="selector-tag">root</span> <span class="selector-tag">filesystem</span>                                                    │ │  </span><br><span class="line">  │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">romfs</span> <span class="selector-tag">root</span> <span class="selector-tag">filesystem</span>                                                    │ │  </span><br><span class="line">  │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">squashfs</span> <span class="selector-tag">root</span> <span class="selector-tag">filesystem</span>                                                 │ │  </span><br><span class="line">  │ │      <span class="selector-attr">[*]</span> <span class="selector-tag">tar</span> <span class="selector-tag">the</span> <span class="selector-tag">root</span> <span class="selector-tag">filesystem</span>                                                  │ │  </span><br><span class="line">  │ │            <span class="selector-tag">Compression</span> <span class="selector-tag">method</span> (no compression)  <span class="selector-tag">---</span>&gt;                              │ │  </span><br><span class="line">  │ │      ()    <span class="selector-tag">other</span> <span class="selector-tag">random</span> <span class="selector-tag">options</span> <span class="selector-tag">to</span> <span class="selector-tag">pass</span> <span class="selector-tag">to</span> <span class="selector-tag">tar</span>                                    │ │  </span><br><span class="line">  │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">ubi</span> <span class="selector-tag">image</span> <span class="selector-tag">containing</span> <span class="selector-tag">an</span> <span class="selector-tag">ubifs</span> <span class="selector-tag">root</span> <span class="selector-tag">filesystem</span>                            │ │  </span><br><span class="line">  │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">ubifs</span> <span class="selector-tag">root</span> <span class="selector-tag">filesystem</span>                                                    │ │  </span><br><span class="line">  │ │      <span class="selector-attr">[ ]</span> <span class="selector-tag">yaffs2</span> <span class="selector-tag">root</span> <span class="selector-tag">filesystem</span>                                                   │ │  </span><br><span class="line">  │ └───────────────────────────────────────────────────────────────────────────────────┘ │</span><br></pre></td></tr></table></figure></p>
+<p>后面还有三个，bootloader配置，host utilities配置，Legacy config option配置，我都按照默认配置，没有修改。因为我最终目的是编译个新的交叉工具链，文件系统，内核。</p>
+<h2 id="2-buildroot目录结构"><a href="#2-buildroot目录结构" class="headerlink" title="2.buildroot目录结构"></a>2.buildroot目录结构</h2><p>这里只需要执行命令 <strong>make</strong> 就可以了，但是中间会遇到很多错误，这个得需要你按照错误提示自行排查。<br>重点，由于国内网络环境条件，编译过程最好使用科学上网工具，因为buildroot在编译得过程会自动下载需求得软件包，这些软件包很多都在github上，因此你需要一个能够代理终端网络得科学上网工具（自行理解，一般程序员都会）。加上google你就能够编译通过了。最后提示编译过程有点长，耐心等待，慢慢排查错误。</p>
+<h2 id="3-编译结果"><a href="#3-编译结果" class="headerlink" title="3.编译结果"></a>3.编译结果</h2><ul>
+<li><strong>arch/</strong> 目录,存放这CPU架构相关的p配置脚本,如ARM,x86, 这些CPU的相关配置,在制作工具链,编译内核,编译uboot的时候非常有用处.</li>
+<li><strong>board/</strong> 目录存放各种board 特有的一些配置脚本，在构建系统时，board默认的boot和Linux kernel配置文件，以及一些板相关特殊构建流程的脚本，都在该目录下，等待自动构建时调用。</li>
+<li><strong>configs/</strong> 目录存放这每种方案上层的全局配置文件，之前的make  mini2440_defconfig实际上就是调用了该目录下的mini2440方案的配置。该目录下的配置文件记录着该机器平台或者方案使用的工具栏，boot， kernel，各种应用软件包的配置和是否编译选择的状态，之前所说的某个特殊开发板整个系统的配置文件，就在configs/目录下.</li>
+<li><strong>dl/</strong> 目录存在从官网上下载的开源软件包，第一次下载后，下次就不会再去从官网下载了，而是从dl/目录下拿开源包，以节约时间.</li>
+<li><strong>docs/</strong> 存放相关的参考文档.</li>
+<li><p><strong>fs/</strong> 存放着各种文件系统的自动构建脚本。</p>
+</li>
+<li><p><strong>linux/</strong> 存放着Linux kernel的自动构建脚本。</p>
+</li>
+<li><p><strong>output/</strong> 是编译出来的输出文件夹，里面的build/目录存放着解压后的各种软件包编译完后的现场。host/目录放着制作好的编译工具链，target/ 目录是用来制作rootfs的，里面放着Linux系统基本的目录结构，以及各种编译好的应用库和bin可执行文件。Images/目录下就是最终生成的可烧写到板子上的各种image。</p>
+</li>
+<li><p><strong>package/</strong> 目录存放着各种第三方开源应用软件包的自动编译构建脚本，这些构建脚本一般都是经过测试，能够构建出相应的软件包的。</p>
+</li>
+<li><p><strong>support/</strong> 目录存放着一些固定的流程脚本，以备构建时调用执行。</p>
+</li>
+<li><p><strong>system/</strong> 目录存放着文件系统目录的和设备节点的模板，这些模板会被拷贝到output/目录下，用于制作根文件系统rootfs。</p>
+</li>
+<li><p><strong>toolchain/</strong> 目录中存放着各种制作工具链的脚本，buildroot可以选择从0开始，用gcc和linux 内核，glibc、uclibc库等原材料制作一个自己工具链，也可以下载第三方制作好的开源工具。</p>
+</li>
+</ul>
+<p>笔者在使用的时候,使用了build编译的工具链,文件系统,两个功能,分别在output/image/rootfs.tar 和output/host(工具链).</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2018/12/07/nuc970-SD卡挂载文件系统/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/07/nuc970-SD卡挂载文件系统/" itemprop="url">nuc970 SD卡挂载文件系统</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-07T10:59:51+08:00">
+                2018-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/嵌入式/" itemprop="url" rel="index">
+                    <span itemprop="name">嵌入式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="nuc970-SD卡挂载文件系统"><a href="#nuc970-SD卡挂载文件系统" class="headerlink" title="nuc970 SD卡挂载文件系统"></a>nuc970 SD卡挂载文件系统</h1><blockquote>
+<p>写在前面： 公司需要把自己研究的算法移植到nuc970芯片上进行实现，我们自己制作的板子中只有SPI Flash 大小为16M，一般情况下我配置出的Linux内核为6M，考虑到后期如果需要在板子中存储数据，显然16M是不够用的。板子上配备了SD卡接口，因此考虑将文件系统存储在SD卡中，uboot挂载文件系统的时候从SD卡挂载。这样板子就能偶拥有一个较为大的存储空间。</p>
+</blockquote>
+<h2 id="SD卡格式化操作"><a href="#SD卡格式化操作" class="headerlink" title="SD卡格式化操作"></a>SD卡格式化操作</h2><p>需要工具如下：</p>
+<ul>
+<li>读卡器一个</li>
+<li>SD卡一张</li>
+<li>linux PC机（可以虚拟机代替）</li>
+</ul>
+<p><strong>明确目的:我们需要将SD卡重新分为两个分区</strong> </p>
+<ul>
+<li><strong>一个Vfat分区,</strong></li>
+<li><strong>一个Ext3分区.</strong><br>结果如下:</li>
+</ul>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">NAME        FSTYPE LABEL    UUID                                 FSAVAIL FSUSE% MOUNTPOINT</span><br><span class="line">sda                                                 </span><br><span class="line">├─sda1      ntfs   本地磁盘 ACD0DE98D0DE67DA                    </span><br><span class="line">├─sda2      ntfs   本地磁盘 <span class="number">02</span>CAD14FCAD14019               </span><br><span class="line">├─sda3      vfat            <span class="number">1174</span><span class="number">-33</span>D6                             <span class="number">456.5</span>M    <span class="number">11</span>% /boot</span><br><span class="line">└─sda4      ext4            <span class="number">652</span>fd18c<span class="number">-3881</span><span class="number">-4517</span>-aeaa<span class="number">-9</span>cf3307af788  <span class="number">236.4</span>G    <span class="number">24</span>% /</span><br><span class="line">sdb                                                              </span><br><span class="line">├─sdb1      vfat            <span class="number">633</span>B<span class="number">-0E65</span>                            </span><br><span class="line">└─sdb2      ext3            <span class="number">735</span>da43e-f63d<span class="number">-4945</span>-b330<span class="number">-2</span>aad120604c</span><br></pre></td></tr></table></figure>
+<p>我们首先将SD放入读卡器，接入linux系统。接入系统之后，我们最好先查看一下我们的SD卡的设备节点标识。 这里我么可以使用lsblk命令来查看我们电脑中的磁盘状况。<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># lsblk -f</span><br><span class="line">NAME        FSTYPE LABEL    UUID                                 FSAVAIL FSUSE% MOUNTPOINT</span><br><span class="line">sda                                                                 </span><br><span class="line">├─sda1      ntfs   本地磁盘 ACD0DE98D0DE67DA                        </span><br><span class="line">├─sda2      ntfs   本地磁盘 <span class="number">02</span>CAD14FCAD14019                       </span><br><span class="line">├─sda3      vfat            <span class="number">1174</span><span class="number">-33</span>D6                             <span class="number">456.5</span>M    <span class="number">11</span>% /boot</span><br><span class="line">└─sda4      ext4            <span class="number">652</span>fd18c<span class="number">-3881</span><span class="number">-4517</span>-aeaa<span class="number">-9</span>cf3307af788  <span class="number">236.4</span>G    <span class="number">24</span>% /</span><br><span class="line">sdb         vfat            A237<span class="number">-25</span>A3                              <span class="number">14.9</span>G     <span class="number">0</span>% /run/media/coo</span><br><span class="line">nvme0n1                                                            </span><br><span class="line">├─nvme0n1p1 vfat   SYSTEM   C27F-C43D                           </span><br><span class="line">├─nvme0n1p2                                             </span><br><span class="line">├─nvme0n1p3 ntfs            <span class="number">287464E27464</span>B46A                   </span><br><span class="line">├─nvme0n1p4 ntfs            ACF6D003F6CFCC30                  </span><br><span class="line">└─nvme0n1p5 ntfs   Recovery <span class="number">66</span>BC8255BC821FA3</span><br></pre></td></tr></table></figure></p>
+<p>这里我们可以看到三个磁盘 sda， sdb， nvme0n1.一般情况下sda是我们电脑中的机械硬盘，sdb则是我们需要操作的SD卡（如果你的显示不一样，可以从容量上简单判断下），nvme0n1是我们电脑中的固态硬盘。sdax(即sda1,sda2,sda3,)是我们的我们的硬盘分区,这里可以看到我的电脑中机械硬盘的分区有4个,其中sda1,sda2是nfts文件系统格式的分区,这里使用来存放windows系统文件的(我的电脑中是双系统linuxa和windows),sda3是vfat格式的文件系统,vfats是操作系统引导是需要去找的一个分区(这里如果自己详细安装过操作系统的人应该明白).同理下面nvme0n1是一样的.</p>
+<p>接下来我们使用fdisk工具来格式化我们的SD卡.具体操作如下<br>终端下输入命令:<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># sudo fdisk /dev/sdb</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Tips:这个工具在我用的时候我们呢也不是很熟悉,但是如何让我们快速学会使用这个工具呢?当然最好的方法就是查看这个工具的帮助文档.</p>
+</blockquote>
+<p>然后你会看到如下输出,注意这里有个一(m for help)意思就是你输入m就可以获得帮助信息.所以我们输出m.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">Welcome to fdisk (util-linux 2.33).</span><br><span class="line">Changes will remain in memory only, until you decide to write them.</span><br><span class="line">Be careful before using the write command.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Command (m for <span class="keyword">help</span>): m</span><br><span class="line"></span><br><span class="line"><span class="keyword">Help</span>:</span><br><span class="line"></span><br><span class="line">  DOS (MBR)</span><br><span class="line">   a   toggle a bootable flag</span><br><span class="line">   b   edit <span class="keyword">nested</span> BSD disklabel</span><br><span class="line">   c   toggle the dos <span class="keyword">compatibility</span> flag</span><br><span class="line"></span><br><span class="line">  Generic</span><br><span class="line">   d   <span class="keyword">delete</span> a <span class="keyword">partition</span></span><br><span class="line">   F   <span class="keyword">list</span> free unpartitioned <span class="keyword">space</span></span><br><span class="line">   l   <span class="keyword">list</span> known <span class="keyword">partition</span> types</span><br><span class="line">   n   <span class="keyword">add</span> a <span class="keyword">new</span> <span class="keyword">partition</span></span><br><span class="line">   p   print the <span class="keyword">partition</span> <span class="keyword">table</span></span><br><span class="line">   t   <span class="keyword">change</span> a <span class="keyword">partition</span> <span class="keyword">type</span></span><br><span class="line">   v   <span class="keyword">verify</span> the <span class="keyword">partition</span> <span class="keyword">table</span></span><br><span class="line">   i   print information about a <span class="keyword">partition</span></span><br><span class="line"></span><br><span class="line">  Misc</span><br><span class="line">   m   print this menu</span><br><span class="line">   u   <span class="keyword">change</span> display/entry units</span><br><span class="line">   x   extra functionality (experts <span class="keyword">only</span>)</span><br><span class="line"></span><br><span class="line">  Script</span><br><span class="line">   I   <span class="keyword">load</span> disk layout <span class="keyword">from</span> sfdisk script <span class="keyword">file</span></span><br><span class="line">   O   dump disk layout <span class="keyword">to</span> sfdisk script <span class="keyword">file</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">Save</span> &amp; <span class="keyword">Exit</span></span><br><span class="line">   w   write <span class="keyword">table</span> <span class="keyword">to</span> disk <span class="keyword">and</span> <span class="keyword">exit</span></span><br><span class="line">   q   quit <span class="keyword">without</span> saving changes</span><br><span class="line"></span><br><span class="line">  <span class="keyword">Create</span> a <span class="keyword">new</span> label</span><br><span class="line">   g   <span class="keyword">create</span> a <span class="keyword">new</span> <span class="keyword">empty</span> GPT <span class="keyword">partition</span> <span class="keyword">table</span></span><br><span class="line">   G   <span class="keyword">create</span> a <span class="keyword">new</span> <span class="keyword">empty</span> SGI (IRIX) <span class="keyword">partition</span> <span class="keyword">table</span></span><br><span class="line">   o   <span class="keyword">create</span> a <span class="keyword">new</span> <span class="keyword">empty</span> DOS <span class="keyword">partition</span> <span class="keyword">table</span></span><br><span class="line">   s   <span class="keyword">create</span> a <span class="keyword">new</span> <span class="keyword">empty</span> Sun <span class="keyword">partition</span> <span class="keyword">table</span></span><br><span class="line"></span><br><span class="line">Command (m <span class="keyword">for</span> <span class="keyword">help</span>):</span><br></pre></td></tr></table></figure></p>
+<p>这里我们需要的命令也就 <strong>d, n, p, w</strong> 三个命令,具体的自己看一下解释吧(ps:英文要有一定基础哦).<br>如果的你SD卡有其他分区,请使用 <strong>d</strong> 命令删除所有分区,命令使用后会按照分区数字大小从大往小一次删除.我的SD卡中有两个分区,故结果如下.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Command (m for <span class="keyword">help</span>): p         <span class="comment">#输入p来查看当前分区</span></span><br><span class="line">Disk /dev/sdb: <span class="number">14.9</span> GiB, <span class="number">16005464064</span> <span class="keyword">bytes</span>, <span class="number">31260672</span> sectors</span><br><span class="line">Disk <span class="keyword">model</span>: <span class="keyword">Storage</span> Device  </span><br><span class="line">Units: sectors <span class="keyword">of</span> <span class="number">1</span> * <span class="number">512</span> = <span class="number">512</span> <span class="keyword">bytes</span></span><br><span class="line">Sector <span class="keyword">size</span> (<span class="keyword">logical</span>/<span class="keyword">physical</span>): <span class="number">512</span> <span class="keyword">bytes</span> / <span class="number">512</span> <span class="keyword">bytes</span></span><br><span class="line">I/O <span class="keyword">size</span> (<span class="keyword">minimum</span>/<span class="keyword">optimal</span>): <span class="number">512</span> <span class="keyword">bytes</span> / <span class="number">512</span> <span class="keyword">bytes</span></span><br><span class="line">Disklabel <span class="keyword">type</span>: dos</span><br><span class="line">Disk identifier: <span class="number">0x107530c7</span></span><br><span class="line"></span><br><span class="line">Device     Boot  <span class="keyword">Start</span>      <span class="keyword">End</span>  Sectors  <span class="keyword">Size</span> <span class="keyword">Id</span> <span class="keyword">Type</span></span><br><span class="line">/dev/sdb1         <span class="number">2048</span>   <span class="number">206848</span>   <span class="number">204801</span>  <span class="number">100</span>M <span class="number">83</span> Linux</span><br><span class="line">/dev/sdb2       <span class="number">208896</span> <span class="number">31260671</span> <span class="number">31051776</span> <span class="number">14.8</span>G <span class="number">83</span> Linux</span><br><span class="line"></span><br><span class="line">Command (m <span class="keyword">for</span> <span class="keyword">help</span>): d     <span class="comment">#输入d 删除一个分区</span></span><br><span class="line"><span class="keyword">Partition</span> <span class="built_in">number</span> (<span class="number">1</span>,<span class="number">2</span>, <span class="keyword">default</span> <span class="number">2</span>):   <span class="comment">#默认回车</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Partition</span> <span class="number">2</span> has been deleted.</span><br><span class="line"></span><br><span class="line">Command (m <span class="keyword">for</span> <span class="keyword">help</span>): d     <span class="comment">#输入d 删除一个分区 </span></span><br><span class="line">Selected <span class="keyword">partition</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">Partition</span> <span class="number">1</span> has been deleted.</span><br></pre></td></tr></table></figure></p>
+<p>接下来就来新建分区了<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">Command (m for <span class="keyword">help</span>): p         <span class="comment">#查看当前磁盘分区</span></span><br><span class="line">Disk /dev/sdc: <span class="number">14.9</span> GiB, <span class="number">16005464064</span> <span class="keyword">bytes</span>, <span class="number">31260672</span> sectors</span><br><span class="line">Disk <span class="keyword">model</span>: <span class="keyword">Storage</span> Device  </span><br><span class="line">Units: sectors <span class="keyword">of</span> <span class="number">1</span> * <span class="number">512</span> = <span class="number">512</span> <span class="keyword">bytes</span></span><br><span class="line">Sector <span class="keyword">size</span> (<span class="keyword">logical</span>/<span class="keyword">physical</span>): <span class="number">512</span> <span class="keyword">bytes</span> / <span class="number">512</span> <span class="keyword">bytes</span></span><br><span class="line">I/O <span class="keyword">size</span> (<span class="keyword">minimum</span>/<span class="keyword">optimal</span>): <span class="number">512</span> <span class="keyword">bytes</span> / <span class="number">512</span> <span class="keyword">bytes</span></span><br><span class="line">Disklabel <span class="keyword">type</span>: dos</span><br><span class="line">Disk identifier: <span class="number">0x107530c7</span></span><br><span class="line"></span><br><span class="line">Command (m <span class="keyword">for</span> <span class="keyword">help</span>): n         <span class="comment">#新建第一个磁盘分区</span></span><br><span class="line"><span class="keyword">Partition</span> <span class="keyword">type</span></span><br><span class="line">   p   primary (<span class="number">0</span> primary, <span class="number">0</span> <span class="keyword">extended</span>, <span class="number">4</span> free)</span><br><span class="line">   e   <span class="keyword">extended</span> (<span class="keyword">container</span> <span class="keyword">for</span> <span class="keyword">logical</span> <span class="keyword">partitions</span>)</span><br><span class="line"><span class="keyword">Select</span> (<span class="keyword">default</span> p): p           <span class="comment">#新建主分区</span></span><br><span class="line"><span class="keyword">Partition</span> <span class="built_in">number</span> (<span class="number">1</span><span class="number">-4</span>, <span class="keyword">default</span> <span class="number">1</span>): <span class="number">1</span>        <span class="comment">#分区号为1</span></span><br><span class="line"><span class="keyword">First</span> sector (<span class="number">2048</span><span class="number">-31260671</span>, <span class="keyword">default</span> <span class="number">2048</span>):     <span class="comment">#默认回车,起始地址</span></span><br><span class="line"><span class="keyword">Last</span> sector, +/-sectors <span class="keyword">or</span> +/-<span class="keyword">size</span>&#123;K,M,G,T,P&#125; (<span class="number">2048</span><span class="number">-31260671</span>, <span class="keyword">default</span> <span class="number">31260671</span>): <span class="number">206848</span> </span><br><span class="line"><span class="comment">#  收入结束地址, 这里206848 是100M的分区大小</span></span><br><span class="line">Created a <span class="keyword">new</span> <span class="keyword">partition</span> <span class="number">1</span> <span class="keyword">of</span> <span class="keyword">type</span> <span class="string">'Linux'</span> <span class="keyword">and</span> <span class="keyword">of</span> <span class="keyword">size</span> <span class="number">100</span> MiB.</span><br><span class="line"></span><br><span class="line">Command (m <span class="keyword">for</span> <span class="keyword">help</span>): n         <span class="comment">#新建第二个磁盘分区</span></span><br><span class="line"><span class="keyword">Partition</span> <span class="keyword">type</span></span><br><span class="line">   p   primary (<span class="number">1</span> primary, <span class="number">0</span> <span class="keyword">extended</span>, <span class="number">3</span> free)</span><br><span class="line">   e   <span class="keyword">extended</span> (<span class="keyword">container</span> <span class="keyword">for</span> <span class="keyword">logical</span> <span class="keyword">partitions</span>)</span><br><span class="line"><span class="keyword">Select</span> (<span class="keyword">default</span> p): p           <span class="comment">#新建主分区</span></span><br><span class="line"><span class="keyword">Partition</span> <span class="built_in">number</span> (<span class="number">2</span><span class="number">-4</span>, <span class="keyword">default</span> <span class="number">2</span>): <span class="comment">#默认回车,分区号为2</span></span><br><span class="line"><span class="keyword">First</span> sector (<span class="number">206849</span><span class="number">-31260671</span>, <span class="keyword">default</span> <span class="number">208896</span>):     <span class="comment">#默认回车,自动接上一个分区的结束地址</span></span><br><span class="line"><span class="keyword">Last</span> sector, +/-sectors <span class="keyword">or</span> +/-<span class="keyword">size</span>&#123;K,M,G,T,P&#125; (<span class="number">208896</span><span class="number">-31260671</span>, <span class="keyword">default</span> <span class="number">31260671</span>):      </span><br><span class="line"><span class="comment">#默认回车,会使用SD卡剩下的所有存储空间</span></span><br><span class="line"></span><br><span class="line">Created a <span class="keyword">new</span> <span class="keyword">partition</span> <span class="number">2</span> <span class="keyword">of</span> <span class="keyword">type</span> <span class="string">'Linux'</span> <span class="keyword">and</span> <span class="keyword">of</span> <span class="keyword">size</span> <span class="number">14.8</span> GiB.</span><br></pre></td></tr></table></figure></p>
+<p>这里我们就完成了分区的划分,但是实际上还没有结束,我们需要使用 <strong>w</strong> 命令来将我们的分区写入到SD卡中.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Command (m for <span class="keyword">help</span>): w         <span class="comment">#输入 w 写入分区</span></span><br><span class="line">The <span class="keyword">partition</span> <span class="keyword">table</span> has been altered.</span><br><span class="line"><span class="keyword">Calling</span> ioctl() <span class="keyword">to</span> re-<span class="keyword">read</span> <span class="keyword">partition</span> table.</span><br><span class="line">Syncing disks.</span><br></pre></td></tr></table></figure></p>
+<p>最后我们在使用 lsblk命令检查一下我们的结果:<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lsblk -f /dev/sdb                                                  :(</span></span><br><span class="line">NAME   FSTYPE <span class="keyword">LABEL</span><span class="bash"> UUID FSAVAIL FSUSE% MOUNTPOINT</span></span><br><span class="line">sdc                                     </span><br><span class="line">├─sdb1                                  </span><br><span class="line">└─sdb2</span><br></pre></td></tr></table></figure></p>
+<p>这个时候我们就可以看到,我们的分区已经做好了,但是和上面还没有文件系统呢.接下来们就需要给没一个分区写入文件系统.这里我们使用mkfs.vfat 和 mkfs.ext3 命令来操作,依次输入命令<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># sudo mkfs.vfat /dev/sdb1</span></span><br><span class="line"><span class="meta"># sudo mkfs.ext3 /dev/sdb2</span></span><br></pre></td></tr></table></figure></p>
+<p>我们再次查看一下SD卡的分区及其文件系统格式,lsblk -f /dev/sdb<br><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># lsblk -f /dev/sdb                                                  :(</span><br><span class="line">NAME   FSTYPE LABEL UUID                                 FSAVAIL FSUSE% MOUNTPOINT</span><br><span class="line">sdc                                                                </span><br><span class="line">├─sdb1 vfat         56F9<span class="string">-5</span>D5B                                       </span><br><span class="line">└─sdb2 ext3         cd4e91d5<span class="string">-717</span>d<span class="string">-439</span>e-b06c<span class="string">-7118</span>cf213ef3</span><br></pre></td></tr></table></figure></p>
+<p>到这里我们的SD卡的内容就算制作完毕了<br>这个时候我们需要将我们制作好的文件系统写入我们的SD卡中<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># mount /dev/sdb2 /mnt</span></span><br><span class="line"><span class="meta"># cp -ra your_rootfs_path/* /mnt</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="修改linux内核配置"><a href="#修改linux内核配置" class="headerlink" title="修改linux内核配置"></a>修改linux内核配置</h2><blockquote>
+<p>之前自己第一次写这个博文的时候,发觉记录的时候出现差错.少记录的配置选项.</p>
+</blockquote>
+<p>这个部分我们需要配置linux内核,使其能够支持ext3系统,这里值给出需要配置的linux内核选项，其余的选项，你可以根据自己的内容进行修改（这里我默认你已经会使用Linux内核编译工作了）<br>配置内核支持Ext3文件系统.</p>
+<div align="center"><br><img src="https://s1.ax1x.com/2018/12/07/F3eb1f.md.png"><br><p>图1.Ext3文件系统支持-linux内核配置</p></div>
+
+<p>配置内核支持SD卡系统:</p>
+<p><div align="center"><br><img src><br></div><br>配置完成之后,我们将修改的linux内核下载到nuc970板子的spi-flash中.</p>
+<h2 id="修改uboot启动参数"><a href="#修改uboot启动参数" class="headerlink" title="修改uboot启动参数"></a>修改uboot启动参数</h2><p>最后一步了,为了能够让uboot从SD卡挂载文件系统,我们需要修改uboot的启动参数,板子上电之后,我们进入uboot命令行界面,然后输入如下命令:<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> bootargs <span class="comment">"noinitrd root=179:2 rw rootdelay=3 rootfstype=ext3 console=ttyS0"</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Tips: 这里解释一下,root=179:2 这个参数指定了root的位置是在SD卡(我不知道为啥),这里要设置rootdelay=3,防止内核还没有读取到SD卡就开始加载ext3文件系统,导致启动失败,这里最好指明我们的文件系统格式</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2018/11/29/regularization-term/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/29/regularization-term/" itemprop="url">正则化-解决学习中的过拟合和欠拟合问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-29T15:41:19+08:00">
+                2018-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="正则化-解决学习中的过拟合问题"><a href="#正则化-解决学习中的过拟合问题" class="headerlink" title="正则化-解决学习中的过拟合问题"></a>正则化-解决学习中的过拟合问题</h1><blockquote>
+<p>写在前面：在机器学习中，如果我们的模型比较复杂，容易造成过拟合现象。直观的表现为，在训练你数据集上的效果很好，但是在测试集上的效果就不是很尽如人意了，泛化能力差。为了解决学习过程中的过拟合问题，我们通常采用正则化技术来解决过拟合问题，增强模型的泛化能力。</p>
+</blockquote>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>首先，从使用正则化解决了一个什么问题的角度来看：正则化是为了防止过拟合， 进而增强泛化能力。用白话文转义，泛化误差（generalization error）= 测试误差（test error），其实就是使用训练数据训练的模型在测试集上的表现（或说性能 performance）好不好。</p>
+<p><div align="center"><br><a href="https://imgchr.com/i/FeiHkn" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/11/29/FeiHkn.md.png" alt="FeiHkn.png" border="0"></a></div></p>
+<p></p><p>图1 过拟合现象的直观图</p><br><br>如上图，图上的蓝色点表示我么需要去拟合的数据点，我们通常认为绿色这条直线是一个不错的拟合曲线，即该曲线具有很强的泛化能力，在测试集的数据上应该具有不错的性能表现。我们不难发现，红色的曲线穿过了所有数据点，且曲线上下波动，我么通常认为红色的曲线过拟合了。它在训练集的表现很好，甚至有点超过预期，这样上下波动的点确实能够很好的拟合训练数据，但是在测试数据，或者实际应用的数据上可能表现得就不是这么好。<p></p>
+<p>未完待续。。。。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2018/11/21/BP-network/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/21/BP-network/" itemprop="url">BP-network</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-21T13:03:36+08:00">
+                2018-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="BP神经网络"><a href="#BP神经网络" class="headerlink" title="BP神经网络"></a>BP神经网络</h1><blockquote>
+<p>写在前面：BP神经网络模型在我研究生期间上课学习过，当时只是学习了原理，并没有实现具体计算过程</p>
+</blockquote>
+<hr>
+<h2 id="一、神经元模型"><a href="#一、神经元模型" class="headerlink" title="一、神经元模型"></a>一、神经元模型</h2><p>神经元，也叫做感知器，是神经网络中计算的基本单元，一个典型的神经元结构如图所示：</p>
+<div align="center"><br><img src="https://s1.ax1x.com/2018/11/26/FAnXtA.jpg"><br><p>图1 神经元结构图</p><br></div>
+
+<ul>
+<li><strong>输入向量</strong> $(x_1,x_2,…,x_n)^T$,每一个输入上还有一个对应权值向量$W=(w_1,w_2,…,w_n)^T$,此外还一个偏置项$b$,</li>
+<li><strong>激活函数</strong> 神经元的激活函数$f(x)$可以有很多选择，比如阶跃函数，sigmoid函数，tanh函数等。</li>
+<li><strong>输出</strong>一个神经元的输出计算如下：<br>$$output=f(w_1x_1+w_2x_2+…+w_nx_n+b)$$<br>实际计算的时候我们很少使用这样的式子来计算，我们的做法是，在输入向量的最前面添加一个1，输入向量变为<br>$$X=(1,x_1,x_2,…,x_n)^T$$<br>另$w_0=b$添加到权值向量中变为<br>$$W=(w_0,w_1,w_2,…,w_n)^T$$<br>这样我们就可以将神经元的计算写成为矩阵计算的形式$$output = f(W^TX)$$</li>
+</ul>
+<hr>
+<h2 id="二、神经网络"><a href="#二、神经网络" class="headerlink" title="二、神经网络"></a>二、神经网络</h2><h3 id="2-1神经网络结构—全连接神经网络"><a href="#2-1神经网络结构—全连接神经网络" class="headerlink" title="2.1神经网络结构—全连接神经网络"></a>2.1神经网络结构—全连接神经网络</h3><p>神经网络实际上就是按照一定的规则连接起来的多个神经元。如下图，图2所示，展示了一个全连接的三层神经网络结构</p>
+<blockquote>
+<p>神经网络介绍及图参考博客 <a href="https://www.zybuluo.com/hanbingtao/note/476663" target="_blank" rel="noopener">https://www.zybuluo.com/hanbingtao/note/476663</a></p>
+</blockquote>
+<div align="center"><br><img src="https://s1.ax1x.com/2018/11/26/FAnjfI.png"><br><p>图2 标记的神经元结构图</p><br></div>
+
+
+<ul>
+<li>神经元按照<strong>层</strong>结构来布局，分为输入层，隐藏层，输出层。</li>
+<li>同一层神经元之间没有连接。</li>
+<li>第N层的神经元和第N-1层的所有神经元相连，第N-1层神经元的输出就是第N层神经元的输入。</li>
+<li>每一个连接代表一个权值。</li>
+</ul>
+<h3 id="2-2-全连接网络的网络的输出"><a href="#2-2-全连接网络的网络的输出" class="headerlink" title="2.2 全连接网络的网络的输出"></a>2.2 全连接网络的网络的输出</h3><p>神经网络我们也可以理解成为一个复杂的不知道具体函数解析式的函数，即从出入向量X到输出向量Y的映射关系：<br>在神经网络中我们可以根据输入向量以及其连接方式一层一层的计算各层的输出，最终来计算网络的输出。为了方便说明我们将上图中给每个单元编号，得到图3：</p>
+<div align="center"><br><img src="https://s1.ax1x.com/2018/11/26/FAnjfI.png"><br><p>图3 标记的神经元结构图</p><br></div>
+
+
+<blockquote>
+<p>note：有的教程中不认为输出数据作为一层这里我们将输出数据看为神经网络的一层,即输入层的结果就是输入向量X</p>
+</blockquote>
+<p>接下来我们按照神经元的计算方式分别计算a4，a5，a6，a7神经元的输出,即计算隐藏层的输出，这里我们激活函数为$f(x)=sigmoid(x)$：<br>$$<br>  a_4=f(w_{40}+w_{41}x1+w_{42}x_2+w_{43}x_3)\<br>  a_5=f(w_{50}+w_{51}x1+w_{52}x_2+w_{53}x_3)\<br>  a_6=f(w_{60}+w_{61}x1+w_{62}x_2+w_{63}x_3)\<br>  a_7=f(w_{70}+w_{71}x1+w_{72}x_2+w_{73}x_3)\<br>$$<br>我们同样可以利用计算神经元的方法将隐藏层的计算矩阵化，我以前的线性代数学的不好，所以经常搞错矩阵的维数问题，所以我在矩阵下面加了维度。<br>$$\begin{bmatrix}<br> w_{40} &amp; w_{41}  &amp; w_{42} &amp; w_{43} \<br> w_{50} &amp; w_{51}  &amp; w_{52} &amp; w_{53} \<br> w_{60} &amp; w_{61}  &amp; w_{62} &amp; w_{63} \<br> w_{70} &amp; w_{71}  &amp; w_{72} &amp; w_{73} \<br>\end{bmatrix}_{4\times4}<br>\times<br>\begin{bmatrix}<br> 1\ x_1\ x_2\ x_3<br>\end{bmatrix}_{4\times1}=<br>\begin{bmatrix}<br> a_1\ a_2\ a_3\ a_4\<br>\end{bmatrix}_{4\times1}$$<br>这样我么就以把隐藏层的输出用矩阵表示出来(注意这里实际都是列向量，注意上面的转置符号)：</p>
+<p>$$<br> W_4=\begin{bmatrix} w_{40} &amp; w_{41} &amp; w_{42} &amp; w_{43} \end{bmatrix}^T\<br> W_5=\begin{bmatrix} w_{50} &amp; w_{51} &amp; w_{52} &amp; w_{53} \end{bmatrix}^T\<br> W_6=\begin{bmatrix} w_{60} &amp; w_{61} &amp; w_{62} &amp; w_{63} \end{bmatrix}^T\<br> W_7=\begin{bmatrix} w_{70} &amp; w_{71} &amp; w_{72} &amp; w_{73} \end{bmatrix}^T\<br>–\<br> W = \begin{bmatrix} W_4^T &amp; W_5^T &amp; W_6^T &amp; W_7^T \end{bmatrix}^T\<br>–\<br> X = \begin{bmatrix} 1 &amp; x_1 &amp; x_2 &amp; x_3 &amp; x_4 \end{bmatrix}^T\<br>–\<br> A = \begin{bmatrix} a_1 &amp; a_2 &amp; a_3 &amp; a_4 \end{bmatrix}^T<br>$$<br>这里我们可以观察到，对于隐藏层来说，其所有的权值可以由矩阵表示，且该矩阵的维数为（前一本层节点个数$\times$前一层的节点个数+1 ），这里维数都加一的原因是我们把偏置项一起放入权重矩阵的结果，所以最终的隐藏的输出可以表示为：<br>$$A=f(W \cdot X)$$</p>
+<p>同理我们直接给出隐藏层到输出层的计算方法，隐藏层输出为<br>$$A = \begin{bmatrix} 1 &amp; a_1 &amp; a_2 &amp; a_3 &amp; a_4 \end{bmatrix}^T$$<br>隐藏层到输出层的权值矩阵为<br>$$V_{2\times5}=\begin{bmatrix}<br>  v_{80} &amp; v_{81}  &amp; v_{82} &amp; v_{83} &amp; v_{84}\<br>  v_{90} &amp; v_{91}  &amp; v_{92} &amp; v_{93} &amp; v_{24}\<br>\end{bmatrix}_{2\times5}$$<br>输出$$Y=f(V \cdot A)=\begin{bmatrix} y_1 &amp; y_2 \end{bmatrix}^T$$</p>
+<hr>
+<h3 id="反向传播算法"><a href="#反向传播算法" class="headerlink" title="反向传播算法"></a>反向传播算法</h3><p>反向传播算实际上是链式求导法则的一个应用，理解起来不是很难（前提你还记得高数里的复合函数链式求导法则），按照机器学习的通用套路，我们首先确定神经网络的目标函数，然后使用熟悉的梯度下降算法去求解目标函数的最小值的参数值。<br>我们选取网络所有输出层节点的误差平方和作为目标输出函数：<br>$$E_d=\frac{1}{2}\sum_{i\in outpus}(t_i-y_i)^2\tag{1}$$<br>其中$E_d$表示样本$d$的误差，然后我们使用之前记录过的梯度下降法来对目标函数进行优化：<br>$$w_{ji} \leftarrow w_{ji}-\alpha \frac{\partial E_d}{\partial w_{ji}} \tag{2}$$</p>
+<div align="center"><br><img src="https://s1.ax1x.com/2018/11/26/FAnjfI.png"><br><p>图2 标记的神经元结构图</p><br></div>
+
+<p>观察上图，我们发现权重$w_{ji}$仅能通过节点j的输入值影响网络的其他部分，设$net_j$是节点j的<strong>加权输入</strong>，即：<br>$$net_j=w_j \cdot x_j=\sum_i w_{ji}x_{ji} \tag{3}$$</p>
+<p>$E_d$是$net_j$的函数，而$net_j$是$w_{ji}$的函数，根据链式求导法则得：<br>$$<br>\frac{\partial E_d}{\partial w_{ji}}=\frac{\partial E_d}{\partial net_j}<br>\frac{\partial net_j}{\partial w_{ji}} \tag{4}<br>$$<br>$$<br>\frac{\partial E_d}{\partial w_{ji}}=\frac{\partial E_d}{\partial net_j}<br>\frac{\partial \sum_iw_{ji}x_{ji}}{\partial w_{ji}} \tag{5}<br>$$<br>$$<br>\frac{\partial E_d}{\partial w_{ji}}=\frac{\partial E_d}{\partial net_j}x_{ji}\tag{6}<br>$$</p>
+<p>(6)式中，$x_{ji}$是节点 $i$ 传递给节点 $j$ 的输入值，也是就节点 $i$ 的输入值。</p>
+<p><strong><em>对于$\frac{\partial E_d}{\partial net_j}$的推导</em></strong>，需要区分<strong>输出层</strong>和<strong>隐藏层</strong>的两种情况来说</p>
+<h4 id="输出层权值的训练"><a href="#输出层权值的训练" class="headerlink" title="输出层权值的训练"></a>输出层权值的训练</h4><p>对于<strong>输出层</strong>来说，$net_j$ 仅能通过节点 $j$ 的的输出值 $y_j$ 来影响网络的其他部分，也就是说 $E_d$ 是 $y_j$ 的函数，其中 $y_j=sigmoid(net_j)$ 。所以我们可以再次使用链式求导法则：</p>
+<blockquote>
+<p>这里利用了sigmoid函数的求导的性质，另$y=sigmoid(x)$，则$y^\prime=y(i-y)$，这里我的博客在梯度下降算法里面有推导</p>
+</blockquote>
+<p>$$<br>\frac{\partial E_d}{\partial net_j}=\frac{\partial E_d}{\partial y_j}<br>\frac{\partial y_j}{\partial net_j} \tag{7}<br>$$<br>考虑（7）式的第一项，<br>$$<br>\frac{\partial E_d}{\partial y_j}=\frac{\partial}{\partial y_j} \frac{1}{2}<br>\sum_{i \in outputs}(t_i-y_i)^2 \<br>=\frac{1}{2} \frac{\partial}{\partial y_j} (t_i-y_i)^2 \tag{8}<br>$$<br>考虑（7）式的第二项，<br>$$<br>\frac{\partial y_i}{\partial net_j}=\frac{\partial sigmod(net_j)}{\partial net_j}=y_j(1-y_j)<br>$$<br>如果另$\delta_j=-\frac{\partial E_d}{\partial net_j}$,也就是节点的误差项 $\delta_j$ 网络误差对这个节点输入的偏导数的相反项,带入（7）式得:<br>$$\delta_j=(t_j-y_j)y_j(1-y_j)\tag{9}$$<br>我们将上述推导公式（9）（6）式代入梯度下降公式（2）得：<br>$$w_{ji}\leftarrow w_{ji}-\alpha \frac{\partial E_d}{\partial w_{ji}}\<br>=w_{ji}+\alpha(t_j-y_j)y_j(1-y_j)x_{ji}\<br>= w_{ji}+\alpha\delta_jx_{ji} \tag{10}<br>$$</p>
+<p>####隐藏层权值得训练<br>现在我们要推导出隐藏层得$\frac{\partial E_d}{\partial net_j}$。<br>首先，我们需要定义节点 $j$ 得所有直接下游节点集合$DownStream(j)$。例如节点4来说，他直接下游节点是节点8，节点9。我们可以节点 $j$ 只能通过影响$DownStream(j)$进而影响到$E_d$。我们设$net_k$节点 $j$ 得下游输入,则$E_d$是$net_k$的函数，而$net_k$是$net_j$的函数。因为$net_k$有多个,我们应用全导数公式,可以做出如下推导。<br>$$\frac{\partial E_d}{\partial net_j}=\sum_{k \in Downstream(j)}\frac{\partial E_d}{\partial net_k}\frac{\partial net_k}{\partial net_j}$$<br>$$=\sum_{k \in Downstream(j)}-\delta_k \cdot \frac{\partial net_k}{\partial net_j}$$<br>$$=\sum_{k \in Downstream(j)}-\delta_k\frac{\partial net_k}{\partial a_j}\frac{\partial a_j}{\partial net_j}\$$<br>$$=\sum_{k \in Downstream(j)}-\delta_k w_{kj}\frac{\partial a_j}{\partial net_j}$$<br>$$=\sum_{k \in Downstream(j)}-\delta_k w_{kj}a_j(1-a_j)\tag{11}$$</p>
+<p>$$=-a_j(1-a_j)\sum_{k \in Downstream(j)}\delta_k w_{kj}\tag{12}$$</p>
+<p>最终归纳可得：</p>
+<ul>
+<li>对于输出层节点 $i$ 来说, $t_i$ 为目标输出，$y_i$为网络计算输出，$\delta_i$为该节点的误差项。<br>$$\delta_i=y_i(1-y_i)(t_i-y_i) \tag{式1}$$<br>带入公式分别可以得到节点8和节点9的误差项<br>$$\delta_8=y_1(1-y_1)(t_1-y_1)\<br>\delta_9=y_2(1-y_2)(t_2-y_2)\tag{式2}$$<br>根据输出层权值更新公式：<br>$$w_{ji} = w_{ji} - \alpha\delta_jx_{ji}$$<br>可以得到隐藏层到输出层的权重更新公式：<br>$$\begin{bmatrix}<br>w_{80}  &amp; w_{84} &amp; w_{85} &amp; w_{86} &amp; w_{87} \<br>w_{90}  &amp; w_{94} &amp; w_{95} &amp; w_{96} &amp; w_{87} \<br>\end{bmatrix} - \alpha\begin{bmatrix}<br>\delta_8a_0 &amp; \delta_8a_4 &amp; \delta_8a_5 &amp; \delta_8a_6 &amp; \delta_8a_7 \<br>\delta_9a_0 &amp; \delta_9a_4 &amp; \delta_9a_5 &amp; \delta_9a_6 &amp; \delta_9a_7 \<br>\end{bmatrix}\$$<br>$$ \begin{bmatrix}<br>w_{80}  &amp; w_{84} &amp; w_{85} &amp; w_{86} &amp; w_{87} \<br>w_{90}  &amp; w_{94} &amp; w_{95} &amp; w_{96} &amp; w_{87} \<br>\end{bmatrix} -<br>\alpha<br>\begin{bmatrix} \delta_8\ \ \delta_9\end{bmatrix}<br>\begin{bmatrix} a_0 &amp; a_4 &amp; a_5 &amp; a_6 &amp; a_7  \end{bmatrix}$$</li>
+</ul>
+<p>因此得到矩阵表示式为(通常实际编程的时候需要利用矩阵计算)：<br>$$W := W - \alpha\ \delta X^T$$</p>
+<ul>
+<li>对于隐藏层节点来说，<br>$$\delta_i= a_i(1-a_i)\sum_{k \in outputs}w_{ki}\delta_k$$<br>其中 $a_i$ 是节点 $i$ 的输出值，$w_{ki}$ 是节点 i 到节点 k 的连接权重，$\delta_k$ 是节i到下一层节点 k 的误差项。<br>带入公式我么可以分别得到节点4、节点5、节点6和节点7的误差项，<br>$$\delta_4 = a_4(1-a_4)(w_{84}\delta_8 + w_{94}\delta_9)\<br>\delta_5 = a_5(1-a_5)(w_{85}\delta_8 + w_{95}\delta_9)\<br>\delta_6 = a_6(1-a_6)(w_{86}\delta_8 + w_{96}\delta_9)\<br>\delta_7 = a_7(1-a_7)(w_{87}\delta_8 + w_{97}\delta_9)\<br>$$ </li>
+</ul>
+<p>这里我们可以得到误差的矩阵计算方法，在实际编程计算的时候，前面部分的$a(1-a)$这一块可以直接写的，是向量对应元素的运算。后面的计算可以统一为矩阵运算，<br>$$\begin{bmatrix}<br>  w_{84}\delta_8 + w_{94}\delta_9 \<br>  w_{85}\delta_8 + w_{95}\delta_9 \<br>  w_{86}\delta_8 + w_{96}\delta_9 \<br>  w_{87}\delta_8 + w_{97}\delta_9 \<br>  \end{bmatrix}<em>{4 \times 1} =<br>  \begin{bmatrix}<br>  w</em>{84} &amp; w_{94} \<br>  w_{85} &amp; w_{95} \<br>  w_{86} &amp; w_{96} \<br>  w_{87} &amp; w_{97} \<br>  \end{bmatrix}_{4 \times 2} \cdot<br>  \begin{bmatrix}<br>  \delta_8 \<br>  \delta_9 \<br>  \end{bmatrix}_{2 \times 1}$$</p>
+<p>  类似的根据权重更新方法，我们可以得到输入层到隐藏层的权重更新公式：<br>$$\begin{bmatrix}<br>    w_{40} &amp; w_{41} &amp; w_{42} &amp; w_{43} \<br>    w_{50} &amp; w_{51} &amp; w_{52} &amp; w_{53} \<br>    w_{60} &amp; w_{61} &amp; w_{62} &amp; w_{63} \<br>    w_{70} &amp; w_{71} &amp; w_{72} &amp; w_{73} \<br>    \end{bmatrix}_{4 \times 4} + \alpha<br>    \begin{bmatrix}<br>    \delta_4 &amp; \delta_4x_1 &amp; \delta_4x_2 &amp; \delta_4x_3 \<br>    \delta_5 &amp; \delta_5x_1 &amp; \delta_5x_2 &amp; \delta_5x_3 \<br>    \delta_6 &amp; \delta_6x_1 &amp; \delta_6x_2 &amp; \delta_6x_3 \<br>    \delta_7 &amp; \delta_7x_1 &amp; \delta_7x_2 &amp; \delta_7x_3 \<br>    \end{bmatrix}<em>{4 \times 4} \<br>$$<br>$$<br>    =\begin{bmatrix}<br>    w</em>{40} &amp; w_{41} &amp; w_{42} &amp; w_{43} \<br>    w_{50} &amp; w_{51} &amp; w_{52} &amp; w_{53} \<br>    w_{60} &amp; w_{61} &amp; w_{62} &amp; w_{63} \<br>    w_{70} &amp; w_{71} &amp; w_{72} &amp; w_{73} \<br>    \end{bmatrix}_{4 \times 4} + \alpha<br>    \begin{bmatrix} \delta_4 \ \delta_5 \ \delta_6 \ \delta_7 \end{bmatrix}<br>    \cdot \begin{bmatrix} 1 &amp; x_1 &amp; x_2 &amp; x_3 \end{bmatrix}<br>$$<br>到此为止BP网络的向量更新部分，以及编程中的矩阵化更新完毕。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2018/11/15/nuc970-yaffs2文件系统启动的配置工作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/15/nuc970-yaffs2文件系统启动的配置工作/" itemprop="url">nuc970-yaffs2文件系统启动的配置工作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-15T17:58:34+08:00">
+                2018-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/嵌入式/" itemprop="url" rel="index">
+                    <span itemprop="name">嵌入式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-u-boo相关操作"><a href="#1-u-boo相关操作" class="headerlink" title="1. u-boo相关操作"></a>1. u-boo相关操作</h1><h1 id="2-linux内核配置相关操作"><a href="#2-linux内核配置相关操作" class="headerlink" title="2. linux内核配置相关操作"></a>2. linux内核配置相关操作</h1><h1 id="3-yaffs2文件系统的制作以及最后烧写的步骤"><a href="#3-yaffs2文件系统的制作以及最后烧写的步骤" class="headerlink" title="3. yaffs2文件系统的制作以及最后烧写的步骤"></a>3. yaffs2文件系统的制作以及最后烧写的步骤</h1><hr>
+<h2 id="1-u-boot相关操作"><a href="#1-u-boot相关操作" class="headerlink" title="1.u-boot相关操作"></a>1.u-boot相关操作</h2><p>实验用的开发板是nuc970-evb开发板，nuvoton提供的一个测试开发板。因此u-boot直接采用的了官方给出的bsp包中的uboot.bin。这里u-boot.bin 和u-boot-spl.bin的作用不太清楚。在配置yaffs2文件系统的时候，uboot启动后这里需要注意的是u-boot环境变量的设置。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">baudrate</span>=115200</span><br><span class="line"><span class="attribute">bootargs</span>=noinitrd <span class="attribute">root</span>=/dev/mtdblock2 <span class="attribute">rootfstype</span>=yaffs2 <span class="attribute">rootflags</span>=inband-tags <span class="attribute">console</span>=ttyS0 <span class="attribute">rdinit</span>=/sbin/init </span><br><span class="line"><span class="attribute">bootcmd</span>=nboot 0x7fc0 0 0x200000;bootm 0x7fc0</span><br><span class="line"><span class="attribute">bootdelay</span>=3</span><br><span class="line"><span class="attribute">ethact</span>=emac</span><br><span class="line"><span class="attribute">ethaddr</span>=00:00:00:11:66:88</span><br><span class="line"><span class="attribute">stderr</span>=serial</span><br><span class="line"><span class="attribute">stdin</span>=serial</span><br><span class="line"><span class="attribute">stdout</span>=serial</span><br></pre></td></tr></table></figure>
+<p>在这里我出现了一个问题在bootargs参数的设置上，官方给出的安装手册里在yaffs2的配置中，启动参数如下</p>
+<p><img src="https://oscimg.oschina.net/oscnet/69a41d042da4080ea50ec19ba31dc050317.jpg" alt="yaffs2支持内核配置" title="yaffs2支持内核配置"></p>
+<p>我测试了很多中方法，<strong>但是yaffs2没有启动成功的原因是mem=64M的参数设置，这里感觉很奇怪。</strong></p>
+<h2 id="2-linux内核配置相关操作-1"><a href="#2-linux内核配置相关操作-1" class="headerlink" title="2.linux内核配置相关操作"></a>2.linux内核配置相关操作</h2><p>这里我们需要注意的是取消initranfs的配置 <img src="https://oscimg.oschina.net/oscnet/4a4fda88b23d20556b2284639382473364f.jpg" alt="取消initranfs" title="取消initranfs"></p>
+<p>配置内核默认启动参数，配置如果有bootloader传递的参数，则使用bootloader传递的参数（其实这里一般情况下uboot都会向内核传递参数，其实就是uboot启动时bootargs设置的参数） <img src="https://oscimg.oschina.net/oscnet/1024a61cef0964bfb88a5e3ce51479be7b9.jpg" alt="bootargs" title="bootargs"></p>
+<p>然后配置device driver，配置nand flash支持。（nand flash 有两组管脚可供选择，Port C和Port I，选择需要按照硬件连接而定，这里我成功配置的是选的Port I）里面标红的选项意思是，如果需要u-boot环境变量传入nand flash分区表，则勾选。（这里我没有配置这个，uboot环境变量没有u-boot分区信息表） <img src="https://oscimg.oschina.net/oscnet/c118214f1fb7d54e15b6ee4bf48820ad04f.jpg" alt="mtd-nand flash支持" title="mtd-nand flash支持"></p>
+<p>配置yaffs2文件件系统的支持，这里之前遇到的问题是需要配置Caching block device access to MTD devices，才会产生这个配置选项。</p>
+<p><img src="https://oscimg.oschina.net/oscnet/07977f04704cfcc1bc1ce7df60609d105f7.jpg" alt="yaffs2内核配置" title="yaffs2内核配置"></p>
+<p>然后到此位置就可以保存退出了。执行 make -j4，来编译内核。</p>
+<p>编译完成后编译好的内核镜像nuc970image会在linux内核目录的上层目录中的image目录里，这里我们还要使用mkimage讲linux内核打包（这里和我之前接触的不一样，之前接触的是编译的内核映像为uiamge直接可以下载的）</p>
+<p><img src="https://oscimg.oschina.net/oscnet/c0617dcc3200010aeeaa3f853a487260e1c.jpg" alt="mkimage内核打包" title="mkimage内核打包"></p>
+<p>这里我会进入nuc970bsp目录中执行如下命令</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uboot/tools/mkimage -A arm -O linux -T kernel -S crc32 -a <span class="number">0x7fc0</span> -e <span class="number">0x8000</span> -d image/<span class="number">970</span>image image/<span class="number">970</span>yaffs.bin</span><br></pre></td></tr></table></figure>
+<h2 id="3-yaffs2文件系统的制作"><a href="#3-yaffs2文件系统的制作" class="headerlink" title="3.yaffs2文件系统的制作"></a>3.yaffs2文件系统的制作</h2><p>这里制作yaffs2文件系统需要mkyaffs2文件工具，这个文件的源码在nuc970bsp/application/yaffs2util 中如果不存在，或者执行出错，我们可以进入到nuc970bsp/application/yaffs2uti目录中，依次执行make clen； make 就可以重新编译出本机与开发环境试用的mkyaffs2工具了。制作命令如下：</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">./mkyaffs2</span> <span class="params">--inband-tags</span> -p 2048 rootfs rootfs_yaffs2.img</span><br></pre></td></tr></table></figure>
+<p>最后是烧写步骤，烧录u-boot-spl.bin。 <img src="https://oscimg.oschina.net/oscnet/3e6e90725b17f50a52cc96cc66cbdcf854c.jpg" alt="u-boot-spl" title="u-boot-spl"></p>
+<p>烧录u-boot到nand的0x100000地址处。 <img src="https://oscimg.oschina.net/oscnet/1aef2c42beb0910d912cfc18fb3825d0f44.jpg" alt="u-boot.bin" title="u-boot.bin"></p>
+<p>内核烧录与上图一致，我们将内核烧录到0x200000（这里5个零）地址的位置，最后将yaffs2文件系统映像烧录到0x2000000（注意这里6个零）。重新启动就可以啦。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">CookieDemo</p>
+              <p class="site-description motion-element" itemprop="description">机器学习 | 嵌入式 | 理工男</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CookieDemo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

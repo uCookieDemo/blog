@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="机器学习 | 嵌入式 | 理工男">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CookieDemo的学习记录">
+<meta property="og:url" content="http://blog.cookiedemo.ml/page/2/index.html">
+<meta property="og:site_name" content="CookieDemo的学习记录">
+<meta property="og:description" content="机器学习 | 嵌入式 | 理工男">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CookieDemo的学习记录">
+<meta name="twitter:description" content="机器学习 | 嵌入式 | 理工男">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.cookiedemo.ml/page/2/">
+
+
+
+
+
+  <title>CookieDemo的学习记录</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CookieDemo的学习记录</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">程序元萌新</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2018/11/15/nuc970-uboot-nand-boot，kernel，-filesystem-烧录位置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/15/nuc970-uboot-nand-boot，kernel，-filesystem-烧录位置/" itemprop="url">nuc970 uboot nand-boot，kernel， filesystem 烧录位置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-15T17:39:49+08:00">
+                2018-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/嵌入式/" itemprop="url" rel="index">
+                    <span itemprop="name">嵌入式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一 烧写到Nand Flash</p>
+<p><strong>1.1 **</strong>相关文件说明**</p>
+<p>l BSP版本：nuc970bsp-release-20150519.zip</p>
+<p>l NuWriter版本：2015/04/28-V01，nuvoTon Nu-Writer V1.0</p>
+<p>l 烧写文件：</p>
+<p>u-boot-spl.bin：负责将u-boot.bin从Nand flash搬到DDR中执行。默认执行地址：0x200，可修改。</p>
+<p>u-boot.bin：u-boot程序，默认执行地址：0xE00000，在nand flash中的烧写地址：0x100000。</p>
+<p>env.txt：u-boot环境变量，在Nand Flash中的烧写地址：0x80000。</p>
+<p>970image.ub：Linux kernel。加载地址：0x7fc0；执行地址：0x8000；烧写地址：0x200000，可变要与u-boot环境参数一致，bootcmd=nboot 0x7fc0 0 0x200000;bootm 0x7fc0。</p>
+<p><strong>1.2 **</strong>烧写举例**</p>
+<p>1.烧写u-boot-spl.bin</p>
+<p><a href="http://www.emyard.com/wp-content/uploads/2017/05/clip_image002.jpg" target="_blank" rel="noopener"><img src="http://www.emyard.com/wp-content/uploads/2017/05/clip_image002_thumb.jpg" alt="clip_image002"></a></p>
+<p>Image Type：uBoot型</p>
+<p>Image execute address: 0x200</p>
+<p>2. 烧写 u-boot.bin</p>
+<p><a href="http://www.emyard.com/wp-content/uploads/2017/05/clip_image004.jpg" target="_blank" rel="noopener"><img src="http://www.emyard.com/wp-content/uploads/2017/05/clip_image004_thumb.jpg" alt="clip_image004"></a></p>
+<p>Image Type：Data型</p>
+<p>Image start offset： 0x100000</p>
+<p>3. 烧写U-Boot环境变量env.txt</p>
+<p><a href="http://www.emyard.com/wp-content/uploads/2017/05/clip_image006.jpg" target="_blank" rel="noopener"><img src="http://www.emyard.com/wp-content/uploads/2017/05/clip_image006_thumb.jpg" alt="clip_image006"></a></p>
+<p>Image Type：Environment型</p>
+<p>Image start offset： 0x80000</p>
+<p>4. 烧写kernel</p>
+<p><a href="http://www.emyard.com/wp-content/uploads/2017/05/clip_image008.jpg" target="_blank" rel="noopener"><img src="http://www.emyard.com/wp-content/uploads/2017/05/clip_image008_thumb.jpg" alt="clip_image008"></a></p>
+<p>Image Type：Data型</p>
+<p>Image start offset： 0x200000</p>
+<p>5.烧写yaffs2文件系统</p>
+<p>1)制作yaffs2文件系统</p>
+<p>mkyaffs2 -inband-tags -p 2048 rootfs rootfs_yaffs2.img</p>
+<p>2)烧写yaffs2文件系统</p>
+<p><a href="http://www.emyard.com/wp-content/uploads/2017/05/clip_image010.jpg" target="_blank" rel="noopener"><img src="http://www.emyard.com/wp-content/uploads/2017/05/clip_image010_thumb.jpg" alt="clip_image010"></a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2018/11/15/nuc970-nfs启动配置问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/15/nuc970-nfs启动配置问题/" itemprop="url">nuc970 nfs启动配置问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-15T17:36:52+08:00">
+                2018-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/嵌入式/" itemprop="url" rel="index">
+                    <span itemprop="name">嵌入式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-linux内核配置支持nfs启动"><a href="#1-linux内核配置支持nfs启动" class="headerlink" title="1.linux内核配置支持nfs启动"></a>1.linux内核配置支持nfs启动</h1><h1 id="2-服务器端配置NFS服务器（本人机器环境为Ubuntu18-04）"><a href="#2-服务器端配置NFS服务器（本人机器环境为Ubuntu18-04）" class="headerlink" title="2.服务器端配置NFS服务器（本人机器环境为Ubuntu18.04）"></a>2.服务器端配置NFS服务器（本人机器环境为Ubuntu18.04）</h1><h1 id="3-uboot启动参数设置（问题出在这里）"><a href="#3-uboot启动参数设置（问题出在这里）" class="headerlink" title="3.uboot启动参数设置（问题出在这里）"></a>3.uboot启动参数设置（问题出在这里）</h1><hr>
+<p>之前困扰了一个星期的nuc970评估板nfs启动问题，今天终于解决了，这里写个帖子记录下，避免之后忘记。</p>
+<h2 id="1-linux内核配置"><a href="#1-linux内核配置" class="headerlink" title="1.linux内核配置"></a>1.linux内核配置</h2><p>我们的配置还是在官方给出的nuc970基本配置之上做一些改动。首先进入linux的内核目录，然后进行内核配置，和内核编译工作，具体命令如下。</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">make</span> nuc972_defconfig</span><br><span class="line"><span class="built_in">make</span> menuconfig</span><br></pre></td></tr></table></figure>
+<p>然后就会进入内核配置如图 <img src="https://oscimg.oschina.net/oscnet/72e6aa9f57a81080ff8ad6ac83582d6dea2.jpg" alt="linux内核配置" title="linux内核配置"></p>
+<p>第一步:取消内核对initramfs的支持(不然内核编译过程会把你的文件系统一起编译进去)<br><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">G<span class="function"><span class="title">eneral</span> setup  ---&gt;</span> </span><br><span class="line">   [ ] Initial RAM filesystem <span class="built_in">and</span> RAM disk (initramfs/initrd) support</span><br></pre></td></tr></table></figure></p>
+<p>对于系统从nfs启动我需要内核如下配置，这里有一个先后顺序，先配置IP：kernel level autoconfiguration，才会出现root file system on NFS的选项 这里最好勾选上下满的NFSv2，NFSv3，NFSv4的客户端支持选项。 <img src="https://oscimg.oschina.net/oscnet/63d704e56ff3ebf0efe85dd69282576517a.jpg" alt="IP kernel" title="IP kernel"> <img src="https://oscimg.oschina.net/oscnet/2698e739618c4bba6328e598f9ac891bcca.jpg" alt="nfs support" title="nfs support"></p>
+<p>到这里支持NFS启动的内核最小配置就已经完成了，接下来编译出内核，执行命令</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">make</span> -j4         <span class="meta">#这里的j4是指用4个核去编译</span></span><br></pre></td></tr></table></figure>
+<p>然后使用mkimage将linux内核打包</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkimage -A arm -O linux -T kernel -S crc32 -a <span class="number">0x7fc0</span> -e <span class="number">0x8000</span> -d image/<span class="number">970</span>image <span class="number">970</span>nfsimage.bin</span><br></pre></td></tr></table></figure>
+<p>然后将内核烧录到nand flash 的0x200000位置处。</p>
+<h2 id="2-服务器端配置NFS"><a href="#2-服务器端配置NFS" class="headerlink" title="2.服务器端配置NFS"></a>2.服务器端配置NFS</h2><p>这里我的服务器环境是Ubuntu18.04，如果你们使用的是不同发行版的linux，可能配置不同。</p>
+<pre><code>sudo apt-get install nfs-kernel-server
+</code></pre><p>然后编辑/etc/exports文件配置自己共享目录以及权限，配置内容如下：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/home/</span>cookie<span class="regexp">/nuc970bsp/</span>rootfs    *(rw,sync,no_subtree_check)</span><br></pre></td></tr></table></figure>
+<p>这里/home/cookie/nuc970bsp/rootfs是我服务器的目录，这里你需要配置自己的服务器目录。然后开启服务</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo<span class="built_in"> service </span>nfs-kernel-server start</span><br></pre></td></tr></table></figure>
+<h2 id="3-uboot启动参数设置"><a href="#3-uboot启动参数设置" class="headerlink" title="3.uboot启动参数设置"></a>3.uboot启动参数设置</h2><p>之前的错误一直都在这里，内核配置正确，但是启动参数错误，导致开发板一直启动不起来。具体启动参数如下：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">baudrate</span>=115200</span><br><span class="line"><span class="attribute">bootargs</span>=noinitrd <span class="attribute">console</span>=ttyS0,115200n8 <span class="attribute">root</span>=/dev/nfs rw <span class="attribute">rdinit</span>=/linuxrc <span class="attribute">nfsroot</span>=10.0.20.78:/home/cookie/nuc970bsp/rootfs,nfsvers=3,nolock,tcp <span class="attribute">ip</span>=10.0.20.195:10.0.20.78:10.0.20.254:255.255.255.0::eth0:off</span><br><span class="line"><span class="attribute">bootcmd</span>=nboot 0x7fc0 0 0x200000;bootm 0x7fc0</span><br><span class="line"><span class="attribute">bootdelay</span>=3</span><br><span class="line"><span class="attribute">ethact</span>=emac</span><br><span class="line"><span class="attribute">ethaddr</span>=00:00:00:11:66:88</span><br><span class="line"><span class="attribute">ipaddr</span>=10.0.20.196</span><br><span class="line"><span class="attribute">netmask</span>=255.255.255.0</span><br><span class="line"><span class="attribute">rootpath</span>=/home/cookie/nuc970bsp/rootfs</span><br><span class="line"><span class="attribute">serverip</span>=10.0.20.78</span><br><span class="line"><span class="attribute">stderr</span>=serial</span><br><span class="line"><span class="attribute">stdin</span>=serial</span><br><span class="line"><span class="attribute">stdout</span>=serial</span><br></pre></td></tr></table></figure>
+<p>这里我之前出现的问题在bootargs的配置上面，</p>
+<p>bootargs=noinitrd console=ttyS0,115200n8 root=/dev/nfs rw rdinit=/linuxrc nfsroot=10.0.20.78:/home/cookie/nuc970bsp/rootfs,nfsvers=3,nolock,tcp ip=10.0.20.195:10.0.20.78:10.0.20.254:255.255.255.0::eth0:off</p>
+<p>这里在nfsroot参数中要添加使用NFSv3选项。NFS协议默认使用UDP协议来传输数据，我的开发板网卡在用nfs启动的时候存在掉包现象，故应该考虑采用TCP方式，在rootfs中添加tcp选项，最终nfsroot的配置类似如下</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nfsroot=<span class="number">10.0</span>.<span class="number">20.78</span><span class="symbol">:/home/cookie/nuc970bsp/rootfs</span>,nfsvers=<span class="number">3</span>,nolock,tcp</span><br></pre></td></tr></table></figure>
+<p>最后这里特别感谢挖坑网的晕哥给与我的悉心指导，大家有问题也可以上这个网站上去提问。</p>
+<p>飞机直达===》》<a href="https://debugdump.com/f_24.html" target="_blank" rel="noopener">挖坑网/填坑网 DebugDump Forum</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2018/11/15/logistic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/15/logistic/" itemprop="url">logistic 回归模型(分类器)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-15T13:29:30+08:00">
+                2018-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="logistic回归模型"><a href="#logistic回归模型" class="headerlink" title="logistic回归模型"></a>logistic回归模型</h1><h2 id="1-logistic-Regression-Model"><a href="#1-logistic-Regression-Model" class="headerlink" title="1.logistic Regression Model"></a>1.logistic Regression Model</h2><p>我们希望<br>$$0\leq h_\theta(x)$$<br>$$h_\theta(x)=g(\theta^Tx)$$<br>这里 $g(x)$ 是一个sigmod函数, $g(z) = 1/(1+e^{-z})$,(或者称之为logistic函数)，将假设公式代入sigmod函数得：<br>$$h_\theta(x) = \frac{1}{1+e^{-\theta^Tx}}$$</p>
+<div align="center"><br><img src="https://s1.ax1x.com/2018/11/26/FAuS6f.png"><br><p>图 1.sigmoid 函数曲线</p><br></div>
+
+<p>Logistic 回归模型本质是做一个分类器（虽然算法中有回归），用于两分类问题（即输出只有两类），接下来我们需要按照数据分布来确定边界（边界即区分两种数据的曲线），在二维坐标轴中。<br>如下图2所示，我们要区分图中的圆圈和XX明显需要一个线性决策边界，即一条直线能够将图中的数据分隔在曲线两侧。因此这里我们的分类假设函数即为：$h_\theta(x) = g(\theta_0+\theta_1x_1+\theta_2x_2)$。这里$\theta_0+\theta_1x_1+\theta_2x_2$的取值实际上是在实数集上，但是通过sigmoid函数我们就可以将所有的可能的取值集合映射到$[0,1]$的区间上去。最终分类结果取决于$h_\theta(x)$的值</p>
+<p>$$P(y=1|x;\theta)=h_\theta(x)\<br>P(y=0|x;\theta)=1-h_\theta(x)$$</p>
+<div align="center"><br><img src="https://s1.ax1x.com/2018/11/26/FAnz1P.md.png"><br><p>图2. 线性决策边界</p><br></div><br>但是实际数据分布情况一般都不是线性可分的（即用一条直线就能够区分两种数据），因此我们需要尝试不同的假设函数来找到不同的决策边界，如图3所示；这里我们使用的假设函数就不是线性函数了，而是圆形函数 $h_\theta(x)=g(\theta_0+\theta_1x_1+\theta_2x_2+\theta_3x_1^2+\theta_4x_2^2)$。<br><br><div align="center"><br><img src="https://s1.ax1x.com/2018/11/26/FAuCnS.png"><br><p>图2. 圆形性决策边界</p><br></div>
+
+<p>我们可以假设我们已经找到一组值 $\begin{bmatrix} \theta_0 &amp; \theta_1 &amp; \theta_3 &amp; \theta_4 \end{bmatrix}^T=\begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \end{bmatrix}^T$, 带入假设函数，如果 $-1+x_1^2+x_2^2\geq0$，则 $y=1$ 。这里我们就可以容易的看出实际决策边界是一个单位元。位于单位圆外的数据为一类，单位圆内的为另一类。</p>
+<p><strong>我们需要注意的是决策边界是由假设函数的类型以及其参数决定的，当我们的假设函数不能很好的拟合数据时我们可以尝试其他函数。</strong></p>
+<h2 id="2-如何找到合适的参数"><a href="#2-如何找到合适的参数" class="headerlink" title="2.如何找到合适的参数"></a>2.如何找到合适的参数</h2><p>给定训练集：<br>$${(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})}$$<br>m个训练样本：<br>$$x\in[x_0,x_1,…,x_n]^T, y\in{0,1}$$<br>sigmoid函数<br>$$h_\theta(x) = \frac{1}{1+e^{-\theta^Tx}}$$<br><strong>问题：如何找到一组合适的参数来分类数据？</strong><br>回顾之前线性回归中的Cost函数<br>$$ J(\theta_0,\theta_1,…,\theta_n)=\frac{1}{2m}\sum_{i=1}^{m}h_\theta(x^{(i)}-y^{(i)})^2$$<br>由于这里的$h_\theta(x)$并不是一个线性函数，而是一个比较复杂的非线性函数，所以我们得到Cost函数并不是一个弓形函数（<strong>弓形函数</strong>，即在全局只有一个极小值，典型的为a小于0的二次函数就是一个弓形函数，它的图像在其定义域区间内只有一个全局最小值；与此相反，非弓形函数在其定义域区间内不只有一个局部最小值，其函数图像类似于山峰，有高峰有谷底）。因此我们在logistic回归模型中需要找到一个弓形的Cost函数，来计算其代价。<br><strong>logistic回归的代价函数</strong><br>$$Cost(h_\theta(x),y)=<br>\begin{cases}<br>-log(h_\theta(x)), \text{if y = 1}\<br>-log(1-h_\theta(x)), \text{if y = 0}<br>\end{cases}$$</p>
+<div align="center"><br><img src="https://s1.ax1x.com/2018/11/26/FAuP0g.png"><br><p>图4. Cost函数图</p><br></div>
+
+<p>$$J(\theta)=\frac{1}{m}\sum_{i=1}^m Cost(h_\theta(x),y)$$<br>$$=- \frac{1}{m}[\sum_{i=1}^{m}y^{(i)}logh_\theta(x)^{(i)}+(1-y^{(i)})log(1-h_\theta^{(i)}(x))]$$<br>为了能狗找到合适的一组参数来满足使$J(\theta)$达到最小值，即：</p>
+<p>$$Goal:minJ(\theta)$$</p>
+<h2 id="3-梯度下降算法"><a href="#3-梯度下降算法" class="headerlink" title="3.梯度下降算法"></a>3.梯度下降算法</h2><blockquote>
+<p>[梯度下降算法推倒过程参考博客]—》<a href="https://blog.csdn.net/ligang_csdn/article/details/53838743]" target="_blank" rel="noopener">https://blog.csdn.net/ligang_csdn/article/details/53838743]</a>(<a href="https://blog.csdn.net/ligang_csdn/article/details/53838743" target="_blank" rel="noopener">https://blog.csdn.net/ligang_csdn/article/details/53838743</a></p>
+</blockquote>
+<p>这里的思想其实和线性回归中的思想类似，寻找$J(\theta)$的最小值我么可以采用梯度下降算法。梯度下降算法的一般公式我们在这里给出：</p>
+<p>$$Cost Function: J(\theta)=\frac{1}{m}\sum_{i=1}^mCost(h_\theta(x),y)$$</p>
+<p>$$Find     \theta: minJ(\theta) $$$$repeat:\theta_j := \theta_j + \alpha \frac {\partial}{\partial\theta_j}J(\theta)$$<br>推导过程如下，这里参考文章前人博客中,(这里直接偷懒直接粘贴图片啦)</p>
+<div align="center"><br><img src="https://s1.ax1x.com/2018/11/26/FAnxpt.md.jpg"><br></div>
+
+<h2 id="4-算法实现"><a href="#4-算法实现" class="headerlink" title="4.算法实现"></a>4.算法实现</h2><p>算法数据来自与github上的一个简单学习数据</p>
+<blockquote>
+<p><a href="https://github.com/lawlite19/MachineLearning_Python" target="_blank" rel="noopener">https://github.com/lawlite19/MachineLearning_Python</a></p>
+</blockquote>
+<p>编程实现中主要写一写难点部分吧，一般大众化的我就不做解释，说明下我自己实现过程中遇到的困难，以及实现过程中，几个关键的点。</p>
+<ul>
+<li><strong>读取数据，绘制数据分布图</strong></li>
+</ul>
+<p>从图5中我们可以明显看出，图中的数据使用线性决策面不能够很好区分出来，故考虑使用二次多项式函数来拟合决策函数。$h_\theta(x)=g(\theta_0+\theta_1x_1+\theta_2x_2+\theta_3x_1x_2+\theta_4x_1^2+\theta_5x_2^2)$</p>
+<div align="center"><br><img src="https://s1.ax1x.com/2018/11/26/FAupX8.md.png"><br><p>图5 原始数据分布图</p><br></div>
+
+<p>计算代码如下：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">def <span class="title">mapFeature</span>(<span class="params">X1,X2</span>):</span></span><br><span class="line"><span class="function">   degree</span> = <span class="number">2</span>;                     <span class="meta"># 映射的最高次方</span></span><br><span class="line">   <span class="keyword">out</span> = np.ones((X1.shape[<span class="number">0</span>],<span class="number">1</span>))  <span class="meta"># 映射后的结果数组（取代X）</span></span><br><span class="line">   <span class="meta">#这里以degree=2为例，映射为1,x1,x2,x1^2,x1,x2,x2^2</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> np.arange(<span class="number">1</span>,degree+<span class="number">1</span>): </span><br><span class="line">       <span class="function"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="title">range</span>(<span class="params">i+<span class="number">1</span></span>):</span></span><br><span class="line"><span class="function">           temp</span> = X1**(i-j)*(X2**j)    <span class="meta">#矩阵直接乘相当于matlab中的点乘.*</span></span><br><span class="line">           <span class="keyword">out</span> = np.hstack((<span class="keyword">out</span>, temp.reshape(<span class="number">-1</span>,<span class="number">1</span>)))</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">out</span></span><br></pre></td></tr></table></figure></p>
+<p>这里的运算我们仔细看循环里的内容</p>
+<blockquote>
+<p><strong>Note！</strong> 对于python运算的理解： <strong> 操作符，在python中 </strong> 操作符是用来计算幂次的例如： 2**2 即2的二次方，2**2=4，相应的对于向量来说 a = [1,2,3] 则 a**2=[1,4,9] ,对于向量来说，a=[2,3,4] b=[2,2,2] 计算a<em>b，则得到两个向量对应元素的乘积，返回值仍然是一个向量；即a</em>b=[4,6,8],如果要计算矩阵乘法（向量乘法）请调用对应的函数。</p>
+</blockquote>
+<p>循环体内的计算代码为X1<strong>(i-j)*(X2</strong>j)，我们一层一层看循环内容:</p>
+<p>i=[1,2] j=[0,1,2]</p>
+<p>i=1时，j=[0,1]实际上时计算了假设多项式函数的阶数为1的项，即$x_1^1x_2^0, x_1^0x_2^1$即$x_1,x_2$</p>
+<p>i=2时，j=[0,1,2]实际上计算了假设多项式函数的阶数为2的项。即$x_1^2,x_2^2, x_1x_2$.</p>
+<p>out变量中每次利用np.hstack向out向量的后增加一列向量。即最终的$out=[1,x_1,x_2,x_1^2,x_2^2, x_1x_2]$,剩下的计算中我们只需要将out向量和出事theta向量点乘即可得到我们假设函数的数值。$h_\theta(x)=[\theta_0,\theta_1,\theta_2,\theta_3,\theta_4,\theta_5]*[1,x_1,x_2,x_1^2,x_1x_2,x_2^2]^T$。这里时算法的矩阵化运算方法，在这里遇到坑特别记录下。</p>
+<ul>
+<li><strong>Cost函数计算</strong><br>这里计算的时候与上面讲的原理上有所区别,因为我是学习别人写的代码,自己研读之后发现,这里实际使用的正则话的代码,为了增强模型的泛化能力.即:<br>$$J(\theta)=- \frac{1}{m}\sum_{i=1}^{m}y^{(i)}logh_\theta(x)^{(i)}+(1-y^{(i)})log(1-h_\theta^{(i)}(x))+\frac{\lambda}{2}\theta^T\theta$$<blockquote>
+<p>这里正则化的内容我们后面在说这个问题,先放这里.</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def costFunction(initial_theta,X,y,inital_lambda):</span><br><span class="line">    m = len(y)</span><br><span class="line">    J = <span class="number">0</span></span><br><span class="line">            </span><br><span class="line">    h = sigmoid(<span class="built_in">np</span>.dot(X,initial_theta))    # 计算h(z)</span><br><span class="line">    # 因为正则化j=<span class="number">1</span>从<span class="number">1</span>开始，不包含<span class="number">0</span>，所以复制一份，前theta(<span class="number">0</span>)值为<span class="number">0</span> </span><br><span class="line">    theta1 = initial_theta.<span class="built_in">copy</span>()           </span><br><span class="line">    theta1[<span class="number">0</span>] = <span class="number">0</span>   </span><br><span class="line">            </span><br><span class="line">    temp = <span class="built_in">np</span>.dot(<span class="built_in">np</span>.<span class="built_in">transpose</span>(theta1),theta1)</span><br><span class="line">            </span><br><span class="line">    J = (-<span class="built_in">np</span>.dot(<span class="built_in">np</span>.<span class="built_in">transpose</span>(y),<span class="built_in">np</span>.<span class="built_in">log</span>(h))</span><br><span class="line">    -<span class="built_in">np</span>.dot(<span class="built_in">np</span>.<span class="built_in">transpose</span>(<span class="number">1</span>-y),<span class="built_in">np</span>.<span class="built_in">log</span>(<span class="number">1</span>-h))</span><br><span class="line">    +temp*inital_lambda/<span class="number">2</span>)/m   # 正则化的代价方程</span><br><span class="line">     <span class="built_in">return</span> J</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2018/11/15/liner-regression/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/15/liner-regression/" itemprop="url">线性回归模型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-15T11:51:22+08:00">
+                2018-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="线性回归模型"><a href="#线性回归模型" class="headerlink" title="线性回归模型"></a>线性回归模型</h1><h2 id="1-模型介绍"><a href="#1-模型介绍" class="headerlink" title="1-模型介绍"></a>1-模型介绍</h2><p>Hypothesis:</p>
+<p>$$\displaystyle  h_\theta(x)=\theta_0 + \theta_1x_1 + …+\theta_nx_{n}$$</p>
+<p>Parameters:</p>
+<p>$$\theta_0,\theta_1,…,\theta_n$$</p>
+<p>Cost Function: </p>
+<p>$$\displaystyle J(\theta_0,\theta_1,…,\theta_n)=\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}-y^{(i)})^2$$</p>
+<p>Goal:</p>
+<p>$$\displaystyle minimize_{_{\theta_0,\theta_1,…,\theta_n}}J(\theta_0,\theta_1,…,\theta_n)$$</p>
+<h3 id="Hypothesis函数"><a href="#Hypothesis函数" class="headerlink" title="Hypothesis函数"></a>Hypothesis函数</h3><p> 是我们需要拟合的函数,一般称之为假设函数,我需要做的是通过给定的数据来找到参数$\theta_0,\:\theta_1$来确定一条直线,使数据中尽可能多的点落在直线周围上面的描述只是一个简单的只有两个参数的问题.</p>
+<h3 id="Cost函数"><a href="#Cost函数" class="headerlink" title="Cost函数"></a>Cost函数</h3><p> cost函数,计算实际值和观测值之间的误差的平方,用这个值来表示拟合函数的代价,代价越小,则说明拟合的函数越贴合数据.</p>
+<h3 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h3><p> 因此我们需要做的是使代价函数最小.</p>
+<h3 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h3><p> 实际运用中我们通常写成向量形式,方便计算.通常我们可以表示为矩阵形式</p>
+<p>假设函数: </p>
+<p>$$\displaystyle  h_\theta(x)=\theta^TX,其中\theta = [\theta_0, \theta_1,…,\theta_n]^T ,X=[1,x_1,x_2,…,x_n]$$</p>
+<p>Cost 函数计算</p>
+<p>$$J(\theta_0,\theta_1,…,\theta_n)=\frac{1}{2m}error^T*error$$<br>$$error=\theta^TX-Y$$<br>$$Y = [y_0,y_1,…,y_n]$$</p>
+<h2 id="2-梯度下降算法"><a href="#2-梯度下降算法" class="headerlink" title="2- 梯度下降算法"></a>2- 梯度下降算法</h2><p>接下来就是如何寻找一组合适的$[\theta_0,\theta_1,…,\theta_n]$来确定我们的假设函数的值.梯度下降算法是一种求解局部最优值的方法.对于$f(x)$,在$a$点的梯度是$f(x)$增长最快的方向,那么相反的方向则是该点下降最快的方向.具体公式如下</p>
+<p>$$\frac{\partial}{\partial\theta_j}J(\theta_0,…,\theta_n)=\frac{\partial}{\partial\theta_j} \frac{1}{2}\sum_{j=1}^{m}(h_\theta(x)-y)^2=(h_\theta(x)-y)x^{(i)}$$</p>
+<p>下面是参数更新过程</p>
+<p>$$\theta_j = \theta_j-\alpha\frac{\partial}{\partial\theta<br>}J(\theta)=\theta_j-\alpha(h_\theta(x)-y)x^{(i)}$$</p>
+<p>对于线性回归问题,我们的假设函数是线性函数,因此我们的参数更新过程可以写成向量形式:</p>
+<p>$$\frac{\partial}{\partial\theta_j}J(\theta_0,…,\theta_n)=\frac{1}{m}X^T(\theta^T-Y)$$</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cookiedemo.ml/2018/11/15/mathjax_cmdeditor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookieDemo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CookieDemo的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/15/mathjax_cmdeditor/" itemprop="url">Markdown 公式指导手册</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-15T11:51:22+08:00">
+                2018-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Markdown/" itemprop="url" rel="index">
+                    <span itemprop="name">Markdown</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#Cmd Markdown 公式指导手册</p>
+<blockquote>
+<p>2018-03-20 补档：</p>
+</blockquote>
+<p>本文固定链接: <a href="https://www.zybuluo.com/codeep/note/163962" target="_blank" rel="noopener">https://www.zybuluo.com/codeep/note/163962</a></p>
+<blockquote>
+<p>本文为 MathJax 在 Cmd Markdown 环境下的语法指引。<br>Cmd Markdown 编辑阅读器支持 $\LaTeX$ 编辑显示支持，例如：$\sum_{i=1}^n a_i=0$，访问 <a href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank" rel="noopener">MathJax</a> 以参考更多使用方法。</p>
+</blockquote>
+<blockquote>
+<p>右键点击每一个公式，选择 <strong>[Show Math As] → [TeX Commands]</strong> 以查看该公式的命令详情。</p>
+</blockquote>
+<p>[TOC]</p>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">CookieDemo</p>
+              <p class="site-description motion-element" itemprop="description">机器学习 | 嵌入式 | 理工男</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CookieDemo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

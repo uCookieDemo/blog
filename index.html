@@ -390,7 +390,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-14 15:35:10" itemprop="dateModified" datetime="2019-03-14T15:35:10+08:00">2019-03-14</time>
+                <time title="Modified: 2019-03-18 16:06:18" itemprop="dateModified" datetime="2019-03-18T16:06:18+08:00">2019-03-18</time>
               
             
           </span>
@@ -456,7 +456,18 @@
 <img src="http://wx1.sinaimg.cn/large/007vJL53ly1fzgldwf0arj30hn0j63zr.jpg">
 </div>
 
-<h3 id="nuc977开发板配置"><a href="#nuc977开发板配置" class="headerlink" title="nuc977开发板配置"></a>nuc977开发板配置</h3>
+<h3 id="nuc977开发板配置"><a href="#nuc977开发板配置" class="headerlink" title="nuc977开发板配置"></a>nuc977开发板配置</h3><p>这里的内容是参考新唐官方操作手册中的内容。<br>nuc970系列支持两个SPI，可以单独使能或者同时使能一下是同时使能两个的接口说明</p>
+<div align="center">
+<img src="http://wx3.sinaimg.cn/large/007vJL53ly1g13dcel08wj30pk0bdt9m.jpg" alt="image" width="920" data-width="920" data-height="409">
+</div>
+如果要使用SPI-Flash，需要开启MTD功能,需要使能如下选项：
+<div align="center">
+<img src="http://wx2.sinaimg.cn/large/007vJL53ly1g17035y1dcj30kd04cdg2.jpg">
+</div>
+另外，jffs2文件系统功能需要同时使能，才能正确的使用Flash存储设备。关于jffs2文件系统的配置方式如下：
+<div align="center">
+<img src="https://wx2.sinaimg.cn/large/007vJL53ly1g170dmqz6qj30f302ywel.jpg" alt="image" width="543" data-width="543" data-height="106">
+</div>
           
         
       
